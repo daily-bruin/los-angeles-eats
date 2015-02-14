@@ -1,0 +1,112 @@
+<!-- <!DOCTYPE html>
+<head>
+	<title>Valentine's</title>
+	<link href="http://fonts.googleapis.com/css?family=Raleway:100,200,300,400" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/javascript" href="valentine.js">
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+	<h1>What do you feel like?</h1>
+	<div id="loader">
+		<ul>
+			<li>
+				<button id="1">I'm feeling active</button>
+			</li>
+			<li>
+				<button id="2">I'm a foodie</button>
+			</li>
+			<li>
+				<button id="3">I just want to chill</button>
+			</li>
+		</ul>
+	</div>
+</body>
+
+</html>
+
+ -->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<link href="http://fonts.googleapis.com/css?family=Raleway:100,200,300,400" rel="stylesheet" type="text/css">
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+	<!--Hearts below, made by dazieh, tutorial at easy-html-tutorials-->
+<script>if(typeof jQuery=='undefined'){document.write('<'+'script');document.write(' language="javascript"');document.write(' type="text/javascript"');document.write(' src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js">');document.write('</'+'script'+'>')}</script><script>if(!image_urls){var image_urls=Array()}if(!flash_urls){var flash_urls=Array()}image_urls['rain1']="http://www.picgifs.com/mini-graphics/mini-graphics/hearts/mini-graphics-hearts-655853.gif";image_urls['rain2']="http://www.picgifs.com/mini-graphics/mini-graphics/hearts/mini-graphics-hearts-655853.gif";image_urls['rain3']="http://www.picgifs.com/mini-graphics/mini-graphics/hearts/mini-graphics-hearts-655853.gif";image_urls['rain4']="http://www.picgifs.com/mini-graphics/mini-graphics/hearts/mini-graphics-hearts-655853.gif";$(document).ready(function(){var c=$(window).width();var d=$(window).height();var e=function(a,b){return Math.round(a+(Math.random()*(b-a)))};var f=function(a){setTimeout(function(){a.css({left:e(0,c)+'px',top:'-30px',display:'block',opacity:'0.'+e(10,100)}).animate({top:(d-10)+'px'},e(7500,8000),function(){$(this).fadeOut('slow',function(){f(a)})})},e(1,8000))};$('<div></div>').attr('id','rainDiv')
+	.css({position:'fixed',width:(c-20)+'px',height:'1px',left:'0px',top:'-5px',display:'block'}).appendTo('body');for(var i=1;i<=20;i++){var g=$('<img/>').attr('src',image_urls['rain'+e(1,4)])
+	.css({position:'absolute',left:e(0,c)+'px',top:'-30px',display:'block',opacity:'0.'+e(10,100),'margin-left':0}).addClass('rainDrop').appendTo('#rainDiv');f(g);g=null};var h=0;var j=0;$(window).resize(function(){c=$(window).width();d=$(window).height()})});</script>
+<script>if(typeof jQuery=='undefined'){document.write('<'+'script');document.write(' language="javascript"');document.write(' type="text/javascript"');document.write(' src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js">');document.write('</'+'script'+'>')}</script>
+<!--Hearts above, made by dazieh, tutorial at easy-html-tutorials-->
+</head>
+
+<style>
+	body
+	{
+		font-family: Raleway;
+		color: #FF85D6;
+	}
+
+	
+	#food, #activities, #italian, #french, #chinese, #korean, #japanese, #thai, #mexican, #american, #cafe, #random, #outdoor, #indoor
+	{
+		border-style: solid;
+		border-width: 3px;
+		border-color: #FF85D6;
+	}
+
+
+</style>
+
+<body>
+ 	<h1 align=center>Date Ideas for Valentine's Day</h1>
+ 	<div id=choice1 align=center>
+ 		<h2>Food or Activities?</h2>
+ 		<input id=food title=Food type="image" src="http://upload.wikimedia.org/wikipedia/commons/1/14/Barcelona-Restaurant-Flo.jpg" style="height:200px; width:200px" onclick="somefunction()"/>
+ 	
+ 		<input id=activities title=Activities type="image" src="https://c1.staticflickr.com/3/2640/3798069610_35392a6ae8_z.jpg?zz=1" style="height:200px; width:200px" onclick="somefunction()"/>
+ 	</div>
+	
+	<div id=choicefood align=center style="display: none">
+		<h2>What Type?<h2>
+ 		<input id=italian title=Italian type="image" src="http://mrg.bz/Iorue7" style="height:200px; width:200px"/>
+ 		<input id=french title=French type="image" src="https://c2.staticflickr.com/8/7071/14002499152_999cede103.jpg" style="height:200px; width:200px"/>
+ 		<input id=chinese title=Chinese type="image" src="https://c1.staticflickr.com/3/2866/9343040133_cbc259c142_b.jpg" style="height:200px; width:200px"/>
+ 		<input id=korean title=Korean type="image" src="https://c1.staticflickr.com/9/8338/8254315174_5620a2b412_z.jpg" style="height:200px; width:200px"/>
+ 		<input id=japanese title=Japanese type="image" src="http://mrg.bz/hDXKym" style="height:200px; width:200px"/>
+ 		<br>
+ 		<input id=thai title=Thai type="image" src="http://upload.wikimedia.org/wikipedia/commons/0/06/Phanaeng_kai.jpg" style="height:200px; width:200px"/>
+ 		<input id=mexican title=Mexican type="image" src="http://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Tacos-mexican-food-558181_1920_1280.jpg/1024px-Tacos-mexican-food-558181_1920_1280.jpg" style="height:200px; width:200px"/>
+ 		<input id=american title=American type="image" src="https://c2.staticflickr.com/4/3929/15360630818_996e266ac3.jpg" style="height:200px; width:200px"/>
+		<input id=cafe title=Cafe type="image" src="https://c1.staticflickr.com/9/8528/8492815808_efbed569d5.jpg" style="height:200px; width:200px"/>
+		<input id=random title=Random type="image" src="https://c1.staticflickr.com/9/8430/7641003332_9ec8866a19.jpg" style="height:200px; width:200px"/>
+ 	</div>
+
+ 	<div id=choiceactivities align=center style="display: none">
+ 		<h2>Outdoor or Indoor?</h2>
+ 		<input id=outdoor title=Outdoor type="image" src="http://upload.wikimedia.org/wikipedia/commons/4/4d/Kerala_landscape.jpg" style="height:200px; width:200px" />
+ 		<input id=indoor title=Indoor type="image" src="http://upload.wikimedia.org/wikipedia/commons/2/2f/Belk_Theater_-_Charlotte,_NC.jpg" style="height:200px; width:200px"/>
+
+ 	</div>
+
+
+ 	<script>
+		function somefunction()
+		{
+			if (event.target.id ==='food')
+			{
+				document.getElementById("choicefood").style.display = "block";
+				document.getElementById("choiceactivities").style.display = "none";
+			}
+			else if (event.target.id === 'activities')
+			{
+				document.getElementById("choiceactivities").style.display = "block";
+				document.getElementById("choicefood").style.display = "none";
+			}
+		}
+	</script>
+</body>
+</html>

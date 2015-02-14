@@ -60,7 +60,10 @@ def request(host, path, url_params=None):
     finally:
         conn.close()
 
-    output = []
+    output = dict()
+    keys = []
+    values = []
+
     file = open('temp.csv', 'w')
     for key, value in response.iteritems():
         if (key == "businesses"):
@@ -70,10 +73,10 @@ def request(host, path, url_params=None):
                         print v
                         # v = str(v)
                         file.write('*')
-                        file.write(v.encode('utf8'))
+                        file.write(str(v.encode('utf8')))
                         file.write('\n')
                         # print v
-                        output.append(v)
+                        keys.append(v.encode('utf8'))
                     if (k == "location"):
                         for kk, vv in v.iteritems():
                             if (kk == "display_address"):
@@ -85,15 +88,16 @@ def request(host, path, url_params=None):
                                     # print val
                                     address_list.append(val)
                         # print address_list
-                        output.append(address_list)
+                        values.append(val)
                 # print "\n"
     # print output
+    print keys, values
 
-    random_business = random.randrange(0, 19, 2)
-    print output[random_business]
-    print output[random_business+1]
+    # random_business = random.randrange(0, 19, 2)
+    # print output[random_business]
+    # print output[random_business+1]
 
-    return output
+    # return output
 
 def search(term, location):
     """Query the Search API by a search term and location.

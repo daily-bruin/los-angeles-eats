@@ -29,83 +29,244 @@
  -->
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-	<link href="http://fonts.googleapis.com/css?family=Raleway:100,200,300,400" rel="stylesheet" type="text/css">
-	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-
-	<!--Hearts below, made by dazieh, tutorial at easy-html-tutorials-->
-<script>if(typeof jQuery=='undefined'){document.write('<'+'script');document.write(' language="javascript"');document.write(' type="text/javascript"');document.write(' src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js">');document.write('</'+'script'+'>')}</script><script>if(!image_urls){var image_urls=Array()}if(!flash_urls){var flash_urls=Array()}image_urls['rain1']="http://www.picgifs.com/mini-graphics/mini-graphics/hearts/mini-graphics-hearts-655853.gif";image_urls['rain2']="http://www.picgifs.com/mini-graphics/mini-graphics/hearts/mini-graphics-hearts-655853.gif";image_urls['rain3']="http://www.picgifs.com/mini-graphics/mini-graphics/hearts/mini-graphics-hearts-655853.gif";image_urls['rain4']="http://www.picgifs.com/mini-graphics/mini-graphics/hearts/mini-graphics-hearts-655853.gif";$(document).ready(function(){var c=$(window).width();var d=$(window).height();var e=function(a,b){return Math.round(a+(Math.random()*(b-a)))};var f=function(a){setTimeout(function(){a.css({left:e(0,c)+'px',top:'-30px',display:'block',opacity:'0.'+e(10,100)}).animate({top:(d-10)+'px'},e(7500,8000),function(){$(this).fadeOut('slow',function(){f(a)})})},e(1,8000))};$('<div></div>').attr('id','rainDiv')
-	.css({position:'fixed',width:(c-20)+'px',height:'1px',left:'0px',top:'-5px',display:'block'}).appendTo('body');for(var i=1;i<=20;i++){var g=$('<img/>').attr('src',image_urls['rain'+e(1,4)])
-	.css({position:'absolute',left:e(0,c)+'px',top:'-30px',display:'block',opacity:'0.'+e(10,100),'margin-left':0}).addClass('rainDrop').appendTo('#rainDiv');f(g);g=null};var h=0;var j=0;$(window).resize(function(){c=$(window).width();d=$(window).height()})});</script>
-<script>if(typeof jQuery=='undefined'){document.write('<'+'script');document.write(' language="javascript"');document.write(' type="text/javascript"');document.write(' src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js">');document.write('</'+'script'+'>')}</script>
-<!--Hearts above, made by dazieh, tutorial at easy-html-tutorials-->
+<head>
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<!-- Latest compiled JavaScript -->
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<link href="http://fonts.googleapis.com/css?family=Raleway:100,200,300,400" rel="stylesheet" type="text/css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <style>
-	body
-	{
+	body{
 		font-family: Raleway;
-		color: #FF85D6;
+		color: white;
+		background-color: #990000;
+		margin: 0;
+		padding: 0;
 	}
 
+	h1{
+		font-size: 400%;
+		font-weight: bold;
+		text-shadow: 4px 2px black;
+		line-height: 70px;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	h2{
+		font-size: 190%;
+		font-weight: normal;
+		text-shadow: 1px 1px black;
+		line-height: 20px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+
+	.circle{
+		text-align:center;
+		font-size:25px;
+		line-height:150px;
+		width:150px;
+		height:150px;
+		border-radius:50%;
+		background-color:black;
+		color:white;
+		cursor:pointer;
+	}
+
+	.center{
+		left: 50.00%;
+		margin-left: -75px;
+	}
+
+	.left{
+		left: 33.333%;
+		margin-left: -75px;
+	}
+
+	.right{
+		left: 66.667%%;
+		margin-left: -75px;
+	}
+
+	.farright{
+		left: 100%;
+		margin-left: -75px;
+	}
+
+	.farleft{
+		left: 0%;
+		margin-left: -75px;
+	}
 	
-	#food, #activities, #italian, #french, #chinese, #korean, #japanese, #thai, #mexican, #american, #cafe, #random, #outdoor, #indoor
-	{
+	.selected{
+		color:#990000;
+		font-weight: bold;
+		font-size:30px;
 		border-style: solid;
-		border-width: 3px;
-		border-color: #FF85D6;
+		border-width: 5px;
+		border-color: white;
+		margin-left: -2.5px;
 	}
 
+	.choice{
+		font-size:18px;
+		color: #990000;
+		line-height:80px;
+		width:80px;
+		height:80px;
+		background-color:white;
+		margin:auto;
+	}
 
+	.choice:hover{
+		font-size: 19px;
+		width:85px;
+		height:85px;
+		line-height:85px;
+		margin-top: -3.125%;
+	}
+
+	.finaldecision{
+		background-color: black;
+		font-size: 19px;
+		width:85px;
+		height:85px;
+		line-height:85px;
+		margin-top: -3.125%;
+	}
+
+	#row div {
+    -webkit-transition: left 0.5s ease, margin 0.5s ease, right 0.5s ease, border-width 0.5s ease;
+    -moz-transition: left 0.5s ease, margin 0.5s ease, right 0.5s ease, border-width 0.5s ease;
+    -o-transition: left 0.5s ease, margin 0.5s ease, right 0.5s ease, border-width 0.5s ease;
+    transition: left 0.5s ease, margin 0.5s ease, right 0.5s ease, border-width 0.5s ease;
+	}
+
+	body { overflow-x: hidden;}
+
+	ul li {
+  		display: inline-block;
+  		position: relative;
+  		padding: 6px 16px;
+  		background: black;
+  		cursor: pointer;
+  		color: white;
+	}
+
+	ul li ul {
+  		padding: 0;
+  		position: absolute;
+  		top: 100%;
+  		left:-2px;
+  		display: none;
+		border: 2px solid white;
+		width: 111px;
+		border-bottom-radius:.2em;
+	}
+
+	ul li ul li { 
+		background: none;
+		display: block;
+		padding: 5px 15px;
+		font-size: 12.5px;
+	}
+	
+	ul li ul li:hover {
+		color:#990000;;
+		font-weight: bold;
+		background:white;}
+	
+	ul li:hover ul {
+  		display: block;}
+	
 </style>
 
 <body>
- 	<h1 align=center>Date Ideas for Valentine's Day</h1>
- 	<div id=choice1 align=center>
- 		<h2>Food or Activities?</h2>
- 		<input id=food title=Food type="image" src="http://upload.wikimedia.org/wikipedia/commons/1/14/Barcelona-Restaurant-Flo.jpg" style="height:200px; width:200px" onclick="somefunction()"/>
- 	
- 		<input id=activities title=Activities type="image" src="https://c1.staticflickr.com/3/2640/3798069610_35392a6ae8_z.jpg?zz=1" style="height:200px; width:200px" onclick="somefunction()"/>
- 	</div>
 	
-	<div id=choicefood align=center style="display: none">
-		<h2>What Type?<h2>
- 		<input id=italian title=Italian type="image" src="http://mrg.bz/Iorue7" style="height:200px; width:200px"/>
- 		<input id=french title=French type="image" src="https://c2.staticflickr.com/8/7071/14002499152_999cede103.jpg" style="height:200px; width:200px"/>
- 		<input id=chinese title=Chinese type="image" src="https://c1.staticflickr.com/3/2866/9343040133_cbc259c142_b.jpg" style="height:200px; width:200px"/>
- 		<input id=korean title=Korean type="image" src="https://c1.staticflickr.com/9/8338/8254315174_5620a2b412_z.jpg" style="height:200px; width:200px"/>
- 		<input id=japanese title=Japanese type="image" src="http://mrg.bz/hDXKym" style="height:200px; width:200px"/>
- 		<br>
- 		<input id=thai title=Thai type="image" src="http://upload.wikimedia.org/wikipedia/commons/0/06/Phanaeng_kai.jpg" style="height:200px; width:200px"/>
- 		<input id=mexican title=Mexican type="image" src="http://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Tacos-mexican-food-558181_1920_1280.jpg/1024px-Tacos-mexican-food-558181_1920_1280.jpg" style="height:200px; width:200px"/>
- 		<input id=american title=American type="image" src="https://c2.staticflickr.com/4/3929/15360630818_996e266ac3.jpg" style="height:200px; width:200px"/>
-		<input id=cafe title=Cafe type="image" src="https://c1.staticflickr.com/9/8528/8492815808_efbed569d5.jpg" style="height:200px; width:200px"/>
-		<input id=random title=Random type="image" src="https://c1.staticflickr.com/9/8430/7641003332_9ec8866a19.jpg" style="height:200px; width:200px"/>
- 	</div>
+	<div id=header style="position:relative">
+ 		<h1 align=center>IM BORED <br> WHAT SHOULD I DO?</h1>
+ 		<h2 align=center>Ideas for UCLA Students</h2>
+ 	
+ 		<div style="text-align:center; height:16px; border-bottom:2px dotted white">
+			<div id=heart style="display:inline-block; position:relative; background-color:#990000; bottom:5px; padding:12px">  &#10084;  </div>
+		</div>
+	
+		<ul style="position:absolute; z-index:5; width: 115px; height: 35px; bottom: -33px; margin:0; right: 8%; padding:0">
+			<li style="border: 2px solid white; border-radius:.2em; border-top: 2px dotted">DISTANCE
+			<ul>
+				<li>Westwood</li>
+				<li>Sawtelle</li>
+				<li>Santa Monica</li>
+				<li>West LA</li>
+				<li>LA</li>
+			</ul>
+			</li>
+		</ul>
+	</div>
 
- 	<div id=choiceactivities align=center style="display: none">
- 		<h2>Outdoor or Indoor?</h2>
- 		<input id=outdoor title=Outdoor type="image" src="http://upload.wikimedia.org/wikipedia/commons/4/4d/Kerala_landscape.jpg" style="height:200px; width:200px" />
- 		<input id=indoor title=Indoor type="image" src="http://upload.wikimedia.org/wikipedia/commons/2/2f/Belk_Theater_-_Charlotte,_NC.jpg" style="height:200px; width:200px"/>
+	<div id=row style="position:relative; height:150px; top: 85%; transform: translateY(85%);">
+		<div id=food class="center" style="position: absolute" onclick="showChoices(this.id)">
+ 			<div id=foodbutton class="circle">Food</div>
+		</div>
+		<div id=foodactivity class="center" style="position: absolute; z-index: 5" onmouseover="mouseOver()">
+			<div class="circle" style="line-height:38px"><br>Food or Activity?</div>
+		</div>
+		<div id=activity class="center" style="position: absolute" onclick="showChoices(this.id)">
+ 			<div id=activitybutton class="circle">Activity</div>
+		</div>
 
- 	</div>
-
-
+		<div class=activities style="display: none; height: 160px">
+			<div style="position: absolute; left: 33.333%; top: 25%; height: 85px; width: 85px">
+ 				<div id=indoor class="circle choice" style="align:center" onclick="query(this.id)">Indoor</div>
+			</div>
+			<div style="position: absolute; right: 33.333%; top: 25%; height: 85px; width: 85px">
+ 				<div id=outdoor class="circle choice" style="align:center" onclick="query(this.id)">Outdoor</div>
+			</div>
+		</div>
+	</div>
+	
  	<script>
-		function somefunction()
+		function mouseOver()
 		{
-			if (event.target.id ==='food')
+			
+			$("#foodactivity").hide();
+			$("#food").addClass("left");
+			$("#activity").addClass("right");
+		}
+
+		function showChoices(click_id)
+		{
+			if (click_id === 'food')
 			{
-				document.getElementById("choicefood").style.display = "block";
-				document.getElementById("choiceactivities").style.display = "none";
+				$(".activities").hide();
+				$("#food").removeClass("left");
+				$("#food").removeClass("farleft");
+				$("#foodbutton").addClass("selected");
+				$("#activity").addClass("farright");
+				$("#activitybutton").removeClass("selected");
+
 			}
-			else if (event.target.id === 'activities')
+			if (click_id ==='activity')
 			{
-				document.getElementById("choiceactivities").style.display = "block";
-				document.getElementById("choicefood").style.display = "none";
+				$("#activity").removeClass("right");
+				$("#activity").removeClass("farright");
+				$("#activitybutton").addClass("selected");
+				$("#food").addClass("farleft");
+				$("#foodbutton").removeClass("selected");
+				$(".activities").delay(400).fadeIn();
 			}
+		}
+
+		function query(click_id)
+		{
+			$(".choice").removeClass("finaldecision");
+			var obj= '#' + click_id;
+			$(obj).addClass("finaldecision");
+			/*etc, send query*/
 		}
 	</script>
 </body>

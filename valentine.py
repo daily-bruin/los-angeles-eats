@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import argparse
 import json
 import pprint
@@ -7,6 +9,7 @@ import urllib2
 import oauth2
 import random
 import csv
+from flask import Flask, request, render_template
 
 
 API_HOST = 'api.yelp.com'
@@ -64,40 +67,61 @@ def request(host, path, url_params=None):
     keys = []
     values = []
 
-    file = open('temp.csv', 'w')
-    for key, value in response.iteritems():
-        if (key == "businesses"):
-            for i in value:             #value is a list
-                for k, v in i.iteritems():
-                    if (k == "name"):
-                        print v
-                        # v = str(v)
-                        file.write('*')
-                        file.write(str(v.encode('utf8')))
-                        file.write('\n')
-                        # print v
-                        keys.append(v.encode('utf8'))
-                    if (k == "location"):
-                        for kk, vv in v.iteritems():
-                            if (kk == "display_address"):
-                                address_list = []
-                                for val in vv:
-                                    val = str(val)
-                                    file.write(val.replace(",", ""))
-                                    file.write('\n')
-                                    # print val
-                                    address_list.append(val)
-                        # print address_list
-                        values.append(val)
-                # print "\n"
-    # print output
-    print keys, values
+    # file = open('temp.csv', 'w')
+    # for key, value in response.iteritems():
+    #     if (key == "businesses"):
+    #         for i in value:             #value is a list
+    #             for k, v in i.iteritems():
+    #                 if (k == "name"):
+    #                     print v
+    #                     # v = str(v)
+    #                     file.write('*')
+    #                     file.write(str(v.encode('utf8')))
+    #                     file.write('\n')
+    #                     # print v
+    #                     keys.append(v.encode('utf8'))
+    #                 if (k == "location"):
+    #                     for kk, vv in v.iteritems():
+    #                         if (kk == "display_address"):
+    #                             address_list = []
+    #                             for val in vv:
+    #                                 val = str(val)
+    #                                 file.write(val.replace(",", ""))
+    #                                 file.write('\n')
+    #                                 # print val
+    #                                 address_list.append(val)
+    #                     # print address_list
+    #                     values.append(val)
+    #             # print "\n"
+    # # print output
+    # print keys, values
 
     # random_business = random.randrange(0, 19, 2)
     # print output[random_business]
     # print output[random_business+1]
 
     # return output
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template("index.html")
+
+@app.route('/food_choices', methods=['GET'])
+def food_choices():
+    italian = request.form['italian']
+    search(italian, location)
+
+# if __name__ == "__main__":
+#     app.debug = True
+#     app.run(host='0.0.0.0')
+
+if __name__ == '__main__':
+    app.debug = True
+    app.run(host='localhost')
+
+
 
 def search(term, location):
     """Query the Search API by a search term and location.

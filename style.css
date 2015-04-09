@@ -1,0 +1,244 @@
+
+body{
+	font-family: Raleway;
+	color: white;
+	background-color: #990000;
+	margin: 0;
+	padding: 0;
+}
+
+h1{
+	font-size: 400%;
+	font-weight: bold;
+	text-shadow: 4px 2px black;
+	line-height: 70px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+h2{
+	font-size: 190%;
+	font-weight: normal;
+	text-shadow: 1px 1px black;
+	line-height: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.circle{
+	text-align:center;
+	font-size:25px;
+	line-height:150px;
+	width:150px;
+	height:150px;
+	border-radius:50%;
+	background-color:black;
+	color:white;
+	cursor:pointer;
+}
+
+.center{
+	left: 50.00%;
+	margin-left: -75px;
+}
+
+.left{
+	left: 33.333%;
+	margin-left: -75px;
+}
+
+.right{
+	left: 66.667%%;
+	margin-left: -75px;
+}
+
+.farright{
+	left: 100%;
+	margin-left: -75px;
+}
+
+.farleft{
+	left: 0%;
+	margin-left: -75px;
+}
+
+.selected{
+	color:#990000;
+	font-weight: bold;
+	font-size:30px;
+	border-style: solid;
+	border-width: 5px;
+	border-color: white;
+	margin-left: -2.5px;
+}
+
+.choice{
+	font-size:18px;
+	color: #990000;
+	line-height:80px;
+	width:80px;
+	height:80px;
+	background-color:white;
+	margin:auto;
+}
+
+.choice:hover{
+	font-size: 19px;
+	width:85px;
+	height:85px;
+	line-height:85px;
+	margin-top: -3.125%;
+}
+
+.finaldecision{
+	background-color: black;
+	font-size: 19px;
+	width:85px;
+	height:85px;
+	line-height:85px;
+	margin-top: -3.125%;
+}
+
+#row div {
+-webkit-transition: left 0.5s ease, margin 0.5s ease, right 0.5s ease, border-width 0.5s ease;
+-moz-transition: left 0.5s ease, margin 0.5s ease, right 0.5s ease, border-width 0.5s ease;
+-o-transition: left 0.5s ease, margin 0.5s ease, right 0.5s ease, border-width 0.5s ease;
+transition: left 0.5s ease, margin 0.5s ease, right 0.5s ease, border-width 0.5s ease;
+}
+
+body { overflow-x: hidden;}
+
+ul li {
+		display: inline-block;
+		position: relative;
+		padding: 6px 16px;
+		background: black;
+		cursor: pointer;
+		color: white;
+}
+
+ul li ul {
+		padding: 0;
+		position: absolute;
+		top: 100%;
+		left:-2px;
+		display: none;
+	border: 2px solid white;
+	width: 111px;
+	border-bottom-radius:.2em;
+}
+
+ul li ul li { 
+	background: none;
+	display: block;
+	padding: 5px 15px;
+	font-size: 12.5px;
+}
+
+ul li ul li:hover {
+	color:#990000;;
+	font-weight: bold;
+	background:white;}
+
+ul li:hover ul {
+		display: block;}
+
+
+
+/*
+	added css style from downloaded animated circle menu
+	is being modified to fit our original formatting
+*/
+
+.selector {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 140px;
+  height: 140px;
+  margin-top: -70px;
+  margin-left: -70px;
+}
+
+.selector,
+.selector button {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+}
+
+.selector button {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  background: #428bca;
+  border-radius: 50%;
+  border: 0;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+  transition: all .1s;
+}
+
+.selector button:hover { background: #3071a9; }
+
+.selector button:focus { outline: none; }
+
+.selector ul {
+  position: absolute;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  top: -20px;
+  right: -20px;
+  bottom: -20px;
+  left: -20px;
+}
+
+.selector li {
+  position: absolute;
+  width: 0;
+  height: 100%;
+  margin: 0 50%;
+  -webkit-transform: rotate(-360deg);
+  transition: all 0.8s ease-in-out;
+}
+
+.selector li input { display: none; }
+
+.selector li input + label {
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  width: 0;
+  height: 0;
+  line-height: 1px;
+  margin-left: 0;
+  background: #fff;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 1px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: none;
+  transition: all 0.8s ease-in-out, color 0.1s, background 0.1s;
+}
+
+.selector li input + label:hover { background: #f0f0f0; }
+
+.selector li input:checked + label {
+  background: #5cb85c;
+  color: white;
+}
+
+.selector li input:checked + label:hover { background: #449d44; }
+
+.selector.open li input + label {
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  margin-left: -40px;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+}

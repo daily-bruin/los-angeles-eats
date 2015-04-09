@@ -1,192 +1,21 @@
-<!-- <!DOCTYPE html>
-<head>
-	<title>Valentine's</title>
-	<link href="http://fonts.googleapis.com/css?family=Raleway:100,200,300,400" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" type="text/javascript" href="valentine.js">
-	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-</head>
-
-<body>
-	<h1>What do you feel like?</h1>
-	<div id="loader">
-		<ul>
-			<li>
-				<button id="1">I'm feeling active</button>
-			</li>
-			<li>
-				<button id="2">I'm a foodie</button>
-			</li>
-			<li>
-				<button id="3">I just want to chill</button>
-			</li>
-		</ul>
-	</div>
-</body>
-
-</html>
-
- -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-		<!-- jQuery library -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<!-- Latest compiled JavaScript -->
-		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-		<link href="http://fonts.googleapis.com/css?family=Raleway:100,200,300,400" rel="stylesheet" type="text/css">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+
+	<link href="http://fonts.googleapis.com/css?family=Raleway:100,200,300,400" rel="stylesheet" type="text/css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="animate.js"></script>
+		
 </head>
 
-<style>
-	body{
-		font-family: Raleway;
-		color: white;
-		background-color: #990000;
-		margin: 0;
-		padding: 0;
-	}
-
-	h1{
-		font-size: 400%;
-		font-weight: bold;
-		text-shadow: 4px 2px black;
-		line-height: 70px;
-		margin-top: 20px;
-		margin-bottom: 20px;
-	}
-
-	h2{
-		font-size: 190%;
-		font-weight: normal;
-		text-shadow: 1px 1px black;
-		line-height: 20px;
-		margin-top: 10px;
-		margin-bottom: 10px;
-	}
-
-	.circle{
-		text-align:center;
-		font-size:25px;
-		line-height:150px;
-		width:150px;
-		height:150px;
-		border-radius:50%;
-		background-color:black;
-		color:white;
-		cursor:pointer;
-	}
-
-	.center{
-		left: 50.00%;
-		margin-left: -75px;
-	}
-
-	.left{
-		left: 33.333%;
-		margin-left: -75px;
-	}
-
-	.right{
-		left: 66.667%%;
-		margin-left: -75px;
-	}
-
-	.farright{
-		left: 100%;
-		margin-left: -75px;
-	}
-
-	.farleft{
-		left: 0%;
-		margin-left: -75px;
-	}
-	
-	.selected{
-		color:#990000;
-		font-weight: bold;
-		font-size:30px;
-		border-style: solid;
-		border-width: 5px;
-		border-color: white;
-		margin-left: -2.5px;
-	}
-
-	.choice{
-		font-size:18px;
-		color: #990000;
-		line-height:80px;
-		width:80px;
-		height:80px;
-		background-color:white;
-		margin:auto;
-	}
-
-	.choice:hover{
-		font-size: 19px;
-		width:85px;
-		height:85px;
-		line-height:85px;
-		margin-top: -3.125%;
-	}
-
-	.finaldecision{
-		background-color: black;
-		font-size: 19px;
-		width:85px;
-		height:85px;
-		line-height:85px;
-		margin-top: -3.125%;
-	}
-
-	#row div {
-    -webkit-transition: left 0.5s ease, margin 0.5s ease, right 0.5s ease, border-width 0.5s ease;
-    -moz-transition: left 0.5s ease, margin 0.5s ease, right 0.5s ease, border-width 0.5s ease;
-    -o-transition: left 0.5s ease, margin 0.5s ease, right 0.5s ease, border-width 0.5s ease;
-    transition: left 0.5s ease, margin 0.5s ease, right 0.5s ease, border-width 0.5s ease;
-	}
-
-	body { overflow-x: hidden;}
-
-	ul li {
-  		display: inline-block;
-  		position: relative;
-  		padding: 6px 16px;
-  		background: black;
-  		cursor: pointer;
-  		color: white;
-	}
-
-	ul li ul {
-  		padding: 0;
-  		position: absolute;
-  		top: 100%;
-  		left:-2px;
-  		display: none;
-		border: 2px solid white;
-		width: 111px;
-		border-bottom-radius:.2em;
-	}
-
-	ul li ul li { 
-		background: none;
-		display: block;
-		padding: 5px 15px;
-		font-size: 12.5px;
-	}
-	
-	ul li ul li:hover {
-		color:#990000;;
-		font-weight: bold;
-		background:white;}
-	
-	ul li:hover ul {
-  		display: block;}
-	
-</style>
-
 <body>
-	
 	<div id=header style="position:relative">
  		<h1 align=center>IM BORED <br> WHAT SHOULD I DO?</h1>
  		<h2 align=center>Ideas for UCLA Students</h2>
@@ -208,16 +37,35 @@
 		</ul>
 	</div>
 
-	<div id=row style="position:relative; height:150px; top: 85%; transform: translateY(85%);">
-		<div id=food class="center" style="position: absolute" onclick="showChoices(this.id)">
- 			<div id=foodbutton class="circle">Food</div>
+
+	<div id="row" style="position:relative; height:150px; top: 85%; transform: translateY(85%);">
+		<div id="sawtelle" class="center" style="position: absolute" onclick="showChoices(this.id)">
+ 			<div id="foodbutton" class="circle">
+ 				<a href="selector.html">Sawtelle</a>
+ 			</div>
 		</div>
-		<div id=foodactivity class="center" style="position: absolute; z-index: 5" onmouseover="mouseOver()">
-			<div class="circle" style="line-height:38px"><br>Food or Activity?</div>
+		<div id="santamonica" class="center" style="position: absolute" onclick="showChoices(this.id)">
+ 			<div id="activitybutton" class="circle">
+ 				<a href="selector.html">SantaMonica</a>
+ 			</div>
 		</div>
-		<div id=activity class="center" style="position: absolute" onclick="showChoices(this.id)">
- 			<div id=activitybutton class="circle">Activity</div>
+		<div id="westwood" class="center" style="position: absolute" onclick="showChoices(this.id)">
+ 			<div id="activitybutton" class="circle">
+ 				<a href="selector.html">Westwood</a>
+ 			</div>
 		</div>
+		<div id="start" class="center" style="position: absolute; z-index: 5" onmouseover="mouseOver()">
+			<div class="circle" style="line-height:38px"><br>START</div>
+		</div>
+
+		<div id="santamonica" class="center" style="position: absolute"></div>
+	</div>
+    
+    <script>
+      $(function showChoices(id){
+        $id.load("selector.html");
+      });
+    </script>
 
 		<div class=activities style="display: none; height: 160px">
 			<div style="position: absolute; left: 33.333%; top: 25%; height: 85px; width: 85px">
@@ -228,46 +76,7 @@
 			</div>
 		</div>
 	</div>
+
 	
- 	<script>
-		function mouseOver()
-		{
-			
-			$("#foodactivity").hide();
-			$("#food").addClass("left");
-			$("#activity").addClass("right");
-		}
-
-		function showChoices(click_id)
-		{
-			if (click_id === 'food')
-			{
-				$(".activities").hide();
-				$("#food").removeClass("left");
-				$("#food").removeClass("farleft");
-				$("#foodbutton").addClass("selected");
-				$("#activity").addClass("farright");
-				$("#activitybutton").removeClass("selected");
-
-			}
-			if (click_id ==='activity')
-			{
-				$("#activity").removeClass("right");
-				$("#activity").removeClass("farright");
-				$("#activitybutton").addClass("selected");
-				$("#food").addClass("farleft");
-				$("#foodbutton").removeClass("selected");
-				$(".activities").delay(400).fadeIn();
-			}
-		}
-
-		function query(click_id)
-		{
-			$(".choice").removeClass("finaldecision");
-			var obj= '#' + click_id;
-			$(obj).addClass("finaldecision");
-			/*etc, send query*/
-		}
-	</script>
 </body>
 </html>

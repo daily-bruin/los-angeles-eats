@@ -1,62 +1,50 @@
 //function for start button
-function mouseOver()
-{
-	$("#start").hide();
-	$("#westwood").show();
-	$("#sawtelle").addClass("left");
-	$("#santamonica").addClass("right");
-}
+// function mouseOver()
+// {
+// 	$("#start").hide();
+// 	$("#westwood").show();
+// 	$("#sawtelle").addClass("left");
+// 	$("#santamonica").addClass("right");
+// }
+
+$(document).ready(function() { 
+    //checks difference between number of rows and ids. If none, guide is complete and code can be removed.
+    //if a result is used in more that one question reduce the value or results by the number of reuses
+    var rows = $('#qTable tr').length - 1; 
+    var liids = $('#qTable li').length;
 
 
 
+    $('#qTable li').addClass("circle");
 
-//copied from downloaded jquery file
+    $('#qTable li').on('click',function() 
+    {
+    //style the selected answer
+    $(this).addClass('selectedAnswer').siblings().removeClass('selectedAnswer');    
 
-var nbOptions = 8;
-var angleStart = -360;
+    //hide all rows after the currently displayed row and remove selectedAnswer style
+    var rowCurrent = $(this).closest("tr").prevAll("tr").length + 2; 
+    var rowsAfter = ' tr:nth-child(n+' + rowCurrent + ')';
 
-// jquery rotate animation
-function rotate(li,d) {
+    $('#qTable' + rowsAfter).hide().find('li').removeClass('selectedAnswer');
 
+    //show the next row that matches the question id
+    var italNum =  $(this).find('i').text();
+    var qNext = ' tr:nth-child(' + italNum + ')';
 
-    $({d:angleStart}).animate({d:d}, {
-        step: function(now) {
-            $(li)
-               .css({ transform: 'rotate('+now+'deg)' })
-               .find('label')
-                  .css({ transform: 'rotate('+(-now)+'deg)' });
-        }, duration: 0
-    });
-}
+    $('#qTable' + qNext).fadeIn(800);
 
-// show / hide the options
-function toggleOptions(s) {
-	var angleStart = -360;
-    $(s).toggleClass('open');
-    var li = $(s).find('li');
-    var deg = $(s).hasClass('half') ? 180/(li.length-1) : 360/li.length;
-    for(var i=0; i<li.length; i++) {
-        var d = $(s).hasClass('half') ? (i*deg)-90 : i*deg;
-        $(s).hasClass('open') ? rotate(li[i],d) : rotate(li[i],angleStart);
+    //scroll code to bring next question into view
+    var qNextPos = $('#qTable' + qNext).offset();
+    var qNextTop = qNextPos.top;
+    var qNextHigh = $('#qTable' + qNext).height();
+    var qNextBot = qNextHigh + qNextTop + 20; 
+    var scrHigh = $(window).innerHeight();
+    var difHigh = qNextBot - scrHigh;
+
+    if(difHigh > 0) {
+        window.scrollTo(0, difHigh)
     }
-}
-
-$('.selector button').click(function(e) {
-    toggleOptions($(this).parent());
-});
-setTimeout(function() { toggleOptions('.selector'); }, 100);//@ sourceURL=pen.js
-
-
-
-
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-36251023-1']);
-_gaq.push(['_setDomainName', 'jqueryscript.net']);
-_gaq.push(['_trackPageview']);
-
-(function() {
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+    })
+})
 

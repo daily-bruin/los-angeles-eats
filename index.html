@@ -7,11 +7,25 @@
 	<!-- Latest compiled JavaScript -->
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 
 	<link href="http://fonts.googleapis.com/css?family=Raleway:100,200,300,400" rel="stylesheet" type="text/css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=yes">
+    <meta charset="utf-8">
+
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script type="text/javascript" src="animate.js"></script>
+
+	<style>
+    #map-canvas {
+        height: 300px;
+        width: 300px;
+        margin: 50px;
+        padding: 50px;
+		overflow: visible;
+    }
+    </style>
 		
 </head>
 
@@ -32,7 +46,7 @@
 	      <ul id="near">
 	        <li id="westwood">Westwood <i>2</i></li>
 	        <li id="sawtelle">Sawtelle <i>2</i></li>
-	        <li id="santamonica">Santa Monica <i>2</i></li>
+	        <li id="santa+monica">Santa Monica <i>2</i></li>
 	    </ul></td>
 	  </tr>
 	  <tr>
@@ -58,7 +72,9 @@
 	    </ul></td>
 	  </tr>
 	</table>
-
+	
+	<div id="map-canvas"></div>
+	
 
 
 </body>

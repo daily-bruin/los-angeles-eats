@@ -91,22 +91,34 @@ $(document).ready(function() {
                 venueObj = value.items[random].venue;
                
     
-                var content = '<p>' + venueObj.name + '</p><p>' + venueObj.location.address + '</p><p>' + venueObj.location.city + ', ' + venueObj.location.state + ' ' + venueObj.location.postalCode + '</p>';
-                
                 $('#qTable').remove();
-                
                 $("<div></div>").attr('id','address').appendTo('body'); 
                 $("<div>Ew i wanna start over</div>").attr('id','ew').appendTo('body'); 
+                $("<div>Ugh give me another one</div>").attr('id','ugh').appendTo('body'); 
+                again(venueObj);
+
+                function again(venueObj){
+                var content = '<p>' + venueObj.name + '</p><p>' + venueObj.location.address + '</p><p>' + venueObj.location.city + ', ' + venueObj.location.state + ' ' + venueObj.location.postalCode + '</p>';
+                
+                
                 $(content).appendTo("#address");
                 console.log(venueObj.location.lat);
                 console.log(venueObj.location.lng);
 
 
                 google.maps.event.addDomListener(window, 'load', showMap(venueObj.location.lat, venueObj.location.lng, venueObj.name));
-                
+                }
 
                 $('#ew').click( function() {
                     window.location.reload(true);
+                });
+
+                $('#ugh').click( function() {
+                    random = Math.floor(Math.random() *cap);
+                    console.log(random);
+                    venueObj = value.items[random].venue;
+                    $('#address').empty();
+                    again(venueObj);
                 });
             
             });

@@ -1,3 +1,4 @@
+
 body{
 	font-family: Raleway;
 	color: white;
@@ -7,7 +8,7 @@ body{
 }
 
 h1{
-	font-size: 400%;
+	font-size: 300%;
 	font-weight: bold;
 	text-shadow: 4px 2px black;
 	line-height: 70px;
@@ -137,8 +138,9 @@ ul li:hover ul {
 }
 
 #qTable {
-	width:100%; 
+	width:70%; 
 	border-spacing: 0.5em;
+	margin: auto auto;
 }
 
 #qTable li {
@@ -186,10 +188,18 @@ i {
 }
 #address, #ew, #ugh {
 	font-family: Raleway;
+	font-size: 120%;
 	float: right;
 	margin:20px;
 	padding: 20px;
 	border-radius: 10px;
 	background-color: black;
+
+}
+
+#sidebar{
+	float: left;
+	margin: 20px;
+	padding: 10px;
 
 }

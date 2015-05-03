@@ -107,8 +107,8 @@ $(document).ready(function() {
 
                     $('#qTable').remove();
                     $("<div></div>").attr('id','address').appendTo('body'); 
-                    $("<div>Ew i wanna start over</div>").attr('id','ew').appendTo('body'); 
-                    $("<div>Ugh give me another one</div>").attr('id','ugh').appendTo('body'); 
+                    $("<div>Start over</div>").attr('id','ew').appendTo('body'); 
+                    $("<div>Next choice</div>").attr('id','ugh').appendTo('body'); 
                     again(venueObj);
 
                     function again(venueObj){
@@ -186,7 +186,6 @@ $(document).ready(function() {
                         window.location.reload(true);
                     });
 
-                   
                 }); //end of json function
                     
             } //end of if price

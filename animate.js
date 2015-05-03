@@ -65,12 +65,8 @@ $(document).ready(function() {
         }   //end of if near
 
         if( parent == "query"){
-
-            
             query = $(this).attr('id');
-        
             console.log(query);
-        
         }   //end of if query
 
         if( parent == "price"){
@@ -78,7 +74,7 @@ $(document).ready(function() {
 
             console.log(price);
 
-            $.getJSON('https://api.foursquare.com/v2/venues/explore?ll=34.0561,-118.4297&query='+query+'&price='+price+'&oauth_token=MEIANHQZROVVGEY4MBKNJMUYHKEPUXR2QL5HLNJP335ZDIJB&v=20150421',
+            $.getJSON('https://api.foursquare.com/v2/venues/explore?ll='+near+'&query='+query+'&price='+price+'&oauth_token=MEIANHQZROVVGEY4MBKNJMUYHKEPUXR2QL5HLNJP335ZDIJB&v=20150421',
         
                 function(data) {
                     var cap;
@@ -98,6 +94,7 @@ $(document).ready(function() {
                     console.log(random);
                     venueObj = value.items[random].venue;
                    
+                   
 
                     $('#qTable').remove();
                     $("<div></div>").attr('id','address').appendTo('body'); 
@@ -106,7 +103,36 @@ $(document).ready(function() {
                     again(venueObj);
 
                     function again(venueObj){
-                        var content = '<p>' + venueObj.name + '</p><p>' + venueObj.location.address + '</p><p>' + venueObj.location.city + ', ' + venueObj.location.state + ' ' + venueObj.location.postalCode + '</p>';
+                        console.log(venueObj);
+                        var content;
+                        if (venueObj.hasOwnProperty("name")){
+                            content = '<p>' + venueObj.name + '</p>';
+                        }
+                        if (venueObj.location.hasOwnProperty("address")){
+                            content += '<p>' + venueObj.location.address + '</p>';
+                        }
+                        if (venueObj.location.hasOwnProperty("city")){
+                            content += '<p>' + venueObj.location.city;
+                        }
+                        if (venueObj.location.hasOwnProperty("state")){
+                            content += ', ' + venueObj.location.state;
+
+                            if (venueObj.location.hasOwnProperty("postalCode")){
+                                content += ' ' + venueObj.location.postalCode + '</p>';
+                            }
+                            else{
+                                content += '</p>'
+                            }
+                        }
+                        if (venueObj.hasOwnProperty("delivery")){
+                            content += "<p><a href=" + venueObj.delivery.url + " target='_blank'>OMG DELIVERY</a></p>";
+                        }
+                        if (venueObj.hasOwnProperty("hours")){
+                            content += "<p>" + venueObj.hours.status + "</p>";
+                        }
+                        if (venueObj.hasOwnProperty("url")){
+                            content += '<p><a href=' + venueObj.url + ' target="_blank">Website</a></p>';
+                        }
                         
                         
                         $(content).appendTo("#address");
@@ -116,9 +142,6 @@ $(document).ready(function() {
 
                         google.maps.event.addDomListener(window, 'load', showMap(venueObj.location.lat, venueObj.location.lng, venueObj.name));
                     }
-
-                    
-
 
 
                         function showMap(latitude,longitude) {
@@ -136,13 +159,14 @@ $(document).ready(function() {
                                 title: 'Marker'
                             });
                         }   //end of showMap
-                         $('#ugh').click( function() {
-                        random = Math.floor(Math.random() *cap);
-                        console.log(random);
-                        venueObj = value.items[random].venue;
-                        $('#address').empty();
-                        again(venueObj);
-                    });
+
+                        $('#ugh').click( function() {
+                            random = Math.floor(Math.random() *cap);
+                            console.log(random);
+                            venueObj = value.items[random].venue;
+                            $('#address').empty();
+                            again(venueObj);
+                        }); //ugh function
                     } //else
 
                     })  //end of for each loop for response.groups
@@ -152,7 +176,6 @@ $(document).ready(function() {
                     });
 
                    
-                
                 }); //end of json function
                     
             } //end of if price

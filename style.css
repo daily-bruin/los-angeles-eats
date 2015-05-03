@@ -1,24 +1,33 @@
 body{
 	font-family: Raleway;
-	color: white;
-	background-color: #990000;
+	background-color: white;
 	margin: 0;
 	padding: 0;
 }
 
+a{
+	color: white;
+	text-decoration: none;
+}
+
+#header{
+
+	background-color: #0d0d0c;
+}
+
 h1{
-	font-size: 400%;
-	font-weight: bold;
-	text-shadow: 4px 2px black;
+	font-family: 'Raleway';
+	font-size: 300%;
+	font-weight: lighter;
 	line-height: 70px;
-	margin-top: 20px;
+	margin-top: 0px;
 	margin-bottom: 20px;
 }
 
 h2{
 	font-size: 190%;
 	font-weight: normal;
-	text-shadow: 1px 1px black;
+	/*text-shadow: 1px 1px gray;*/
 	line-height: 20px;
 	margin-top: 10px;
 	margin-bottom: 10px;
@@ -26,13 +35,10 @@ h2{
 
 .circle{
 	text-align:center;
-	font-size:25px;
+	font-size:20px;
 	line-height:150px;
 	width:150px;
 	height:150px;
-	border-radius:50%;
-	background-color:black;
-	color:white;
 	cursor:pointer;
 }
 
@@ -81,22 +87,20 @@ h2{
 	margin:auto;
 }
 
-#row div {
--webkit-transition: left 0.5s ease, margin 0.5s ease, right 0.5s ease, border-width 0.5s ease;
--moz-transition: left 0.5s ease, margin 0.5s ease, right 0.5s ease, border-width 0.5s ease;
--o-transition: left 0.5s ease, margin 0.5s ease, right 0.5s ease, border-width 0.5s ease;
-transition: left 0.5s ease, margin 0.5s ease, right 0.5s ease, border-width 0.5s ease;
-}
 
 body { overflow-x: hidden;}
 
-ul li {
-		display: inline-block;
-		position: relative;
-		padding: 6px 16px;
-		background: black;
-		cursor: pointer;
-		color: white;
+#near{
+	padding: 0;
+}
+
+ul li, #sidebar {
+	display: inline-block;
+	position: relative;
+	padding: 6px 16px;
+	background: black;
+	cursor: pointer;
+	color: white;
 }
 
 ul li ul {
@@ -110,7 +114,7 @@ ul li ul {
 	border-bottom-radius:.2em;
 }
 
-ul li ul li { 
+ul li ul li {
 	background: none;
 	display: block;
 	padding: 5px 15px;
@@ -131,18 +135,20 @@ ul li:hover ul {
  */
 
 #qTable td {
-	padding:3px 1em;
-	font-family:"Segoe UI";
+	font-family:"Raleway";
 	/*margin-left: 50px;*/
 }
 
 #qTable {
-	width:100%; 
+	width:70%; 
 	border-spacing: 0.5em;
+	margin: auto auto;
 }
 
 #qTable li {
-	cursor:pointer
+	cursor:pointer;
+	margin: 5px;
+	float: center;
 }
 
 #qTable li:hover { 
@@ -176,20 +182,38 @@ i {
 
 
 #map-canvas {
-		float: right;
-        height: 400px;
-        width: 50%; 
-        margin: 20px;
-        padding: 20px;
-    
-
+	float: right;
+    height: 400px;
+    width: 50%; 
+    margin: 20px;
+    padding: 20px;
 }
-#address, #ew, #ugh {
+
+#address {
 	font-family: Raleway;
+	font-size: 120%;
+	/*float: right;*/
+	margin:50px;
+	padding: 20px;
+	background-color: #e7e9ea;
+	display: inline-block;
+}
+
+#ew, #ugh {
+	font-family: Raleway;
+	font-size: 70%;
 	float: right;
 	margin:20px;
 	padding: 20px;
-	border-radius: 10px;
-	background-color: black;
-
+	background-color: #e7e9ea;
+	height: 25px;
+	width: 25pxs;
 }
+
+/*
+#sidebar{
+	float: left;
+	margin: 20px;
+	padding: 10px;
+	
+}*/

@@ -62,17 +62,26 @@ $(document).ready(function() {
         if( parent == "near"){
             near = $(this).attr('id');
             console.log(near);
+            var label = $(this).text();
+            label = label.slice(0, -1);
+            $('<div>'+label+'</div>').attr('class','circle').appendTo('#sidebar');
         }   //end of if near
 
         if( parent == "query"){
             query = $(this).attr('id');
             console.log(query);
+            var label = $(this).text();
+            label = label.slice(0, -1);
+            $('<div>'+label+'</div>').attr('class','circle').appendTo('#sidebar');
         }   //end of if query
 
         if( parent == "price"){
             price = $(this).attr('id');
 
             console.log(price);
+            var label = $(this).text();
+            label = label.slice(0, -1);
+            $('<div>'+label+'</div>').attr('class','circle').appendTo('#sidebar');
 
             $.getJSON('https://api.foursquare.com/v2/venues/explore?ll='+near+'&query='+query+'&price='+price+'&oauth_token=MEIANHQZROVVGEY4MBKNJMUYHKEPUXR2QL5HLNJP335ZDIJB&v=20150421',
         
@@ -98,8 +107,8 @@ $(document).ready(function() {
 
                     $('#qTable').remove();
                     $("<div></div>").attr('id','address').appendTo('body'); 
-                    $("<div>Ew i wanna start over</div>").attr('id','ew').appendTo('body'); 
-                    $("<div>Ugh give me another one</div>").attr('id','ugh').appendTo('body'); 
+                    $("<div>Start over</div>").attr('id','ew').appendTo('body'); 
+                    $("<div>Next choice</div>").attr('id','ugh').appendTo('body'); 
                     again(venueObj);
 
                     function again(venueObj){
@@ -128,7 +137,9 @@ $(document).ready(function() {
                             content += "<p><a href=" + venueObj.delivery.url + " target='_blank'>OMG DELIVERY</a></p>";
                         }
                         if (venueObj.hasOwnProperty("hours")){
+                            if(venueObj.hours.isOpen == "true"){
                             content += "<p>" + venueObj.hours.status + "</p>";
+                            }
                         }
                         if (venueObj.hasOwnProperty("url")){
                             content += '<p><a href=' + venueObj.url + ' target="_blank">Website</a></p>';
@@ -175,7 +186,6 @@ $(document).ready(function() {
                         window.location.reload(true);
                     });
 
-                   
                 }); //end of json function
                     
             } //end of if price

@@ -10,36 +10,62 @@ a{
 	text-decoration: none;
 }
 
-#header{
+a:hover{
+	color: #FFB84D;
+}
 
+#header{
+	padding-top: .5%;
+	padding-bottom: .5%;
+	margin-bottom: 2%;
 	background-color: #0d0d0c;
+	text-align:center;
+	border-bottom:5px solid #e7e9ea;
+	box-shadow: 0 2px 2px #888888;
 }
 
 h1{
 	font-family: 'Raleway';
 	font-size: 300%;
 	font-weight: lighter;
-	line-height: 70px;
-	margin-top: 0px;
-	margin-bottom: 20px;
-}
-
-h2{
-	font-size: 190%;
-	font-weight: normal;
-	/*text-shadow: 1px 1px gray;*/
-	line-height: 20px;
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
 
+h2{
+	font-size: 200%;
+	font-weight: lighter;
+	color: #000066;
+}
+
+/*
+h2{
+	font-size: 190%;
+	font-weight: lighter;
+	color: #000066;
+	text-shadow: -1px -1px #888888;
+	line-height: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+*/
+
+.title{
+	font-size: 150%;
+	color: #e7e9ea;
+	text-shadow: 1px 1px 1px #444444;
+	line-height: 150%;
+}
 .circle{
 	text-align:center;
 	font-size:20px;
+	font-weight: lighter;
 	line-height:150px;
 	width:150px;
 	height:150px;
 	cursor:pointer;
+	padding: 0;
+	border-radius: .3em;
 }
 
 .center{
@@ -134,6 +160,10 @@ ul li:hover ul {
 	interactive flow diagram
  */
 
+table {
+    table-layout: fixed;
+}
+
 #qTable td {
 	font-family:"Raleway";
 	/*margin-left: 50px;*/
@@ -152,7 +182,7 @@ ul li:hover ul {
 }
 
 #qTable li:hover { 
-	text-decoration:underline
+	font-weight: normal;
 } 
 
 #qTable tr:nth-child(n+2) {
@@ -172,8 +202,10 @@ ul li:hover ul {
 } 
 
 .selectedAnswer {
-	font-weight:bold; 
-	color:#060
+	font-weight:normal;
+	color:#FFB84D;
+	border:.3em solid #e7e9ea;
+	box-shadow: 0px 0px 8px #444444;
 } 
 
 i {
@@ -185,35 +217,56 @@ i {
 	float: right;
     height: 400px;
     width: 50%; 
-    margin: 20px;
+    margin: 50px;
     padding: 20px;
 }
 
 #address {
+	height: 30%;
+	width: 30%;
 	font-family: Raleway;
-	font-size: 120%;
-	/*float: right;*/
-	margin:50px;
+	font-size: 150%;
+	margin:20px;
 	padding: 20px;
 	background-color: #e7e9ea;
 	display: inline-block;
+	border-radius: .5em;
 }
 
 #ew, #ugh {
 	font-family: Raleway;
-	font-size: 70%;
+	font-size: 80%;
 	float: right;
-	margin:20px;
+	margin: 20px;
 	padding: 20px;
 	background-color: #e7e9ea;
-	height: 25px;
-	width: 25pxs;
+	height: 30px;
+	width: 30px;
+	text-align: center;
+	cursor: pointer;
+	border-radius: .5em;
 }
 
-/*
+#ew:hover, #ugh:hover{
+	color: #FFB84D;
+}
+
+
 #sidebar{
 	float: left;
-	margin: 20px;
-	padding: 10px;
-	
-}*/
+	margin: 0;
+	padding: 0;
+	cursor: default;
+}
+
+.sideitem{
+	text-align:center;
+	font-size:18px;
+	font-weight: lighter;
+	line-height:150px;
+	height: 150px;
+	width: 200px;
+	padding: 0;
+	margin: 0;
+	border-bottom:1px solid #FFB84D;
+}

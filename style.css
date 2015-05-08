@@ -35,7 +35,8 @@ h1{
 h2{
 	font-size: 200%;
 	font-weight: lighter;
-	color: #000066;
+	/*color: #000066;*/
+	color:white;
 }
 
 /*
@@ -52,9 +53,9 @@ h2{
 
 .title{
 	font-size: 150%;
-	color: #e7e9ea;
-	text-shadow: 1px 1px 1px #444444;
+	color: #0d0d0c;
 	line-height: 150%;
+	font-weight: normal;
 }
 .circle{
 	text-align:center;
@@ -120,7 +121,7 @@ body { overflow-x: hidden;}
 	padding: 0;
 }
 
-ul li, #sidebar {
+ul li {
 	display: inline-block;
 	position: relative;
 	padding: 6px 16px;
@@ -183,6 +184,7 @@ table {
 
 #qTable li:hover { 
 	font-weight: normal;
+	color: #FFB84D;
 } 
 
 #qTable tr:nth-child(n+2) {
@@ -205,7 +207,7 @@ table {
 	font-weight:normal;
 	color:#FFB84D;
 	border:.3em solid #e7e9ea;
-	box-shadow: 0px 0px 8px #444444;
+	/*box-shadow: 0px 0px 8px #444444;*/
 } 
 
 i {
@@ -226,17 +228,17 @@ i {
 	width: 30%;
 	font-family: Raleway;
 	font-size: 150%;
-	margin:20px;
-	padding: 20px;
 	background-color: #e7e9ea;
 	display: inline-block;
 	border-radius: .5em;
+	float: none;
+	margin: 0 auto;
 }
 
 #ew, #ugh {
 	font-family: Raleway;
 	font-size: 80%;
-	float: right;
+	float: none;
 	margin: 20px;
 	padding: 20px;
 	background-color: #e7e9ea;
@@ -245,28 +247,39 @@ i {
 	text-align: center;
 	cursor: pointer;
 	border-radius: .5em;
+	display: inline-block;
 }
 
 #ew:hover, #ugh:hover{
 	color: #FFB84D;
 }
 
-
-#sidebar{
-	float: left;
-	margin: 0;
-	padding: 0;
-	cursor: default;
+#side{
+	width: 200px;
+	background-color:#e7e9ea;
+	font-weight:normal;
+	font-size: 20px;
+	color:black;
+	text-align:center;
 }
 
-.sideitem{
+#sidebar{
+	background: black;
+	color: white;
+	cursor: default;
 	text-align:center;
-	font-size:18px;
+	font-weight: lighter;
+	line-height:150px;
+	border-radius: .3em;
+}
+
+
+/*
+.sideitem{
 	font-weight: lighter;
 	line-height:150px;
 	height: 150px;
-	width: 200px;
 	padding: 0;
 	margin: 0;
 	border-bottom:1px solid #FFB84D;
-}
+}*/

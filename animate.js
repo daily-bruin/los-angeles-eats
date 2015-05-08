@@ -102,7 +102,7 @@ $(document).ready(function() {
 
                     if (cap == 0){
                          $('#tablediv').remove();
-                        $("<div>Too demanding. Nonexistent.</div>").attr('id','ew').appendTo('.container-fluid');
+                        $("<div>Too demanding. Nonexistent.</div>").attr('id','refresh').appendTo('body');
                     }
 
                     else {
@@ -118,8 +118,8 @@ $(document).ready(function() {
                     $('<div>'+label2+'</div>').appendTo('#sidebar');
                     $('<div>'+label3+'</div>').appendTo('#sidebar');
                     $("<div></div>").attr('id','address').appendTo('#restaurant'); 
-                    $("<div>Start over</div>").attr('id','ew').appendTo('#restaurant'); 
-                    $("<div>Next choice</div>").attr('id','ugh').appendTo('#restaurant'); 
+                    $("<div>Start over</div>").attr('id','refresh').appendTo('#sidebar'); 
+                    $("<div>Next choice</div>").attr('id','next').appendTo('#sidebar'); 
                     again(venueObj);
                     
                     $('#restaurant').show();
@@ -185,7 +185,7 @@ $(document).ready(function() {
                             });
                         }   //end of showMap
 
-                        $('#ugh').click( function() {
+                        $('#next').click( function() {
                             random = Math.floor(Math.random() *cap);
                             console.log(random);
                             venueObj = value.items[random].venue;
@@ -196,7 +196,7 @@ $(document).ready(function() {
 
                     })  //end of for each loop for response.groups
 
-                    $('#ew').click( function() {
+                    $('#refresh').click( function() {
                         window.location.reload(true);
                     });
 

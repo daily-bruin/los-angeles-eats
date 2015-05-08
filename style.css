@@ -33,6 +33,7 @@ h1{
 }
 
 h2{
+
 	font-size: 200%;
 	font-weight: lighter;
 	/*color: #000066;*/
@@ -215,64 +216,65 @@ i {
 } 
 
 
-#map-canvas {
-	float: right;
-    height: 400px;
-    width: 50%; 
-    margin: 50px;
-    padding: 20px;
-}
-
 #address {
-	height: 30%;
-	width: 30%;
+	/*height: 30%;
+	width: 30%;*/
 	font-family: Raleway;
 	font-size: 150%;
 	background-color: #e7e9ea;
-	display: inline-block;
+	/*display: inline-block;*/
 	border-radius: .5em;
 	float: none;
 	margin: 0 auto;
+	padding: 5px;
 }
 
 #ew, #ugh {
 	font-family: Raleway;
-	font-size: 80%;
-	float: none;
+	font-size: 20px;
 	margin: 20px;
-	padding: 20px;
+	padding: 5px;
 	background-color: #e7e9ea;
-	height: 30px;
-	width: 30px;
+	height: 50px;
 	text-align: center;
 	cursor: pointer;
 	border-radius: .5em;
-	display: inline-block;
+	/*display: inline-block;*/
 }
 
 #ew:hover, #ugh:hover{
 	color: #FFB84D;
 }
 
-#side{
+/*#sidebar{
 	width: 200px;
 	background-color:#e7e9ea;
 	font-weight:normal;
 	font-size: 20px;
 	color:black;
-	text-align:center;
-}
+	/*text-align:center;
+}*/
 
 #sidebar{
-	background: black;
 	color: white;
-	cursor: default;
 	text-align:center;
+	line-height: 50px;
 	font-weight: lighter;
-	line-height:150px;
 	border-radius: .3em;
+	display: none;
 }
 
+#sidebar div, #sidebar p{
+	background-color: black;
+	margin: 5px 0 5px 0;
+	font-size: 20px;
+}
+
+#map-canvas {
+    height: 400px;
+	overflow: hidden;
+
+    }
 
 /*
 .sideitem{

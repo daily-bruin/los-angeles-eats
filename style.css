@@ -208,7 +208,7 @@ table {
 	font-weight:normal;
 	color:#FFB84D;
 	border:.3em solid #e7e9ea;
-	/*box-shadow: 0px 0px 8px #444444;*/
+	/*box-shadow: 0px 0px 10px #444444;*/
 } 
 
 i {
@@ -223,28 +223,15 @@ i {
 	font-size: 150%;
 	background-color: #e7e9ea;
 	/*display: inline-block;*/
-	border-radius: .5em;
 	float: none;
-	margin: 0 auto;
+	margin: 0 0 10px 0;
 	padding: 5px;
+
 }
 
-#ew, #ugh {
-	font-family: Raleway;
-	font-size: 20px;
-	margin: 20px;
-	padding: 5px;
-	background-color: #e7e9ea;
-	height: 50px;
-	text-align: center;
-	cursor: pointer;
-	border-radius: .5em;
-	/*display: inline-block;*/
-}
 
-#ew:hover, #ugh:hover{
-	color: #FFB84D;
-}
+
+
 
 /*#sidebar{
 	width: 200px;
@@ -260,7 +247,6 @@ i {
 	text-align:center;
 	line-height: 50px;
 	font-weight: lighter;
-	border-radius: .3em;
 	display: none;
 }
 
@@ -268,6 +254,26 @@ i {
 	background-color: black;
 	margin: 5px 0 5px 0;
 	font-size: 20px;
+}
+
+#sidebar #buttons{
+	font-family: Raleway;
+	font-size: 20px;
+	margin: 20px;
+	padding: 5px;
+	background-color: #e7e9ea;
+	height: 50px;
+	text-align: center;
+	cursor: pointer;
+	/*font-weight: normal;*/
+	color: black;
+	border: black;
+	display: inline-block;
+}
+
+#refresh:hover, #next:hover{
+	color: #FFB84D;
+	/*font-weight: normal;*/
 }
 
 #map-canvas {

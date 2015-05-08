@@ -10,6 +10,9 @@
 var near;
 var query;
 var price;
+var label1;
+var label2;
+var label3;
 
 $(document).ready(function() { 
     //checks difference between number of rows and ids. If none, guide is complete and code can be removed.
@@ -62,26 +65,30 @@ $(document).ready(function() {
         if( parent == "near"){
             near = $(this).attr('id');
             console.log(near);
-            var label = $(this).text();
-            label = label.slice(0, -1);
-            $('<div>'+label+'</div>').attr('class','circle').appendTo('#sidebar');
+            label1 = $(this).text();
+            label1 = label1.slice(0, -1);
+            console.log(label1)
+            
         }   //end of if near
 
         if( parent == "query"){
             query = $(this).attr('id');
             console.log(query);
-            var label = $(this).text();
-            label = label.slice(0, -1);
-            $('<div>'+label+'</div>').attr('class','circle').appendTo('#sidebar');
+            label2 = $(this).text();
+            label2 = label2.slice(0, -1);
+            console.log(label2);
         }   //end of if query
 
         if( parent == "price"){
             price = $(this).attr('id');
 
             console.log(price);
-            var label = $(this).text();
-            label = label.slice(0, -1);
-            $('<div>'+label+'</div>').attr('class','circle').appendTo('#sidebar');
+            label3 = $(this).text();
+            label3 = label3.slice(0, -1);
+            console.log(label3);
+
+          
+            
 
             $.getJSON('https://api.foursquare.com/v2/venues/explore?ll='+near+'&query='+query+'&price='+price+'&oauth_token=MEIANHQZROVVGEY4MBKNJMUYHKEPUXR2QL5HLNJP335ZDIJB&v=20150421',
         
@@ -106,11 +113,15 @@ $(document).ready(function() {
                    
 
                     $('#tablediv').remove();
+                    $('#sidebar').show();
+                    $('<div>'+label1+'</div>').appendTo('#sidebar');
+                    $('<div>'+label2+'</div>').appendTo('#sidebar');
+                    $('<div>'+label3+'</div>').appendTo('#sidebar');
                     $("<div></div>").attr('id','address').appendTo('#restaurant'); 
-                    $("<div>Start over</div>").attr('id','ew').appendTo('.container-fluid'); 
-                    $("<div>Next choice</div>").attr('id','ugh').appendTo('.container-fluid'); 
+                    $("<div>Start over</div>").attr('id','ew').appendTo('#restaurant'); 
+                    $("<div>Next choice</div>").attr('id','ugh').appendTo('#restaurant'); 
                     again(venueObj);
-                    $('#side').show();
+                    
                     $('#restaurant').show();
 
                     function again(venueObj){

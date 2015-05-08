@@ -37,22 +37,21 @@
 <body>
 <div class="container-fluid">
 	<div id=header align=center >
- 		<h1><a href="index.html">LOS ANGELES EATS</h1>
+ 		<h1><a href="index.html">LOS ANGELES EATS</a></h1>
  		<h3 style="color:#FFB84D"><span style="text-decoration: line-through">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&#9672;&nbsp;<span style="text-decoration: line-through">&nbsp;&nbsp;&nbsp;&nbsp;</span></h3>
- 		<h2>Help Me Decide!</a></h2>
- 		<div style="text-align:center; height:16px; border-bottom:2px dotted #FFB84D">
-			<div id=border style="display:inline-block; color: orange; font-size: 150%; bottom:-2px; padding:-2px"></div>
-		</div>
+ 		<h2>Help Me Decide!</h2>
 <!-- 		<h2>We got you covered.</h2> -->
 	</div>
 	
-	<div class="row">
-	<div class="col-lg-4" id=side >
-	<h4 style="background-color:#e7e9ea; width: 200px; height: 50px; line-height: 50px; font-weight:normal; font-size: 18px; color:black;" align=center>Your Selections:</h4>
-	<div id="sidebar" align=center></div>
+	<div class="row-fluid">
+	<!--
+	<div class="col-lg-4" id="side" style="display: none;">
+		<h4 align=center style="height:50px; line-height:50px; margin-right: 0px; padding: 0px">Your Selections:</h4>
+		<div id="sidebar" align="center"> </div>
 	</div>
-	
-	<div class="col-lg-4">
+	-->
+
+	<div id="tablediv" class="col-lg-12" style="float: none; margin: 0 auto;">
 	<table id="qTable">
 	  <tr>
 	    <td><h4 align=center class=title>Where?</h4>
@@ -77,7 +76,7 @@
 	    </ul></td>
 	  </tr>
 	  <tr>
-	    <td><p align=center class=title>Which price range?</p>
+	    <td><h4 align=center class=title>Which price range?</h4>
 	      <ul id="price">
 	        <li id="1">$<i>4</i></li>
 	        <li id="2">$$<i>4</i></li>
@@ -87,8 +86,11 @@
 	  </tr>
 	</table>
 	</div>
-	<div class="col-lg-4">
-	<div id="map-canvas"></div>
+	
+	<div id="restaurant" class="col-lg-4" styl="display: none"></div>
+
+	<div id="map" class="col-lg-4" style="display: none">
+		<div id="map-canvas"></div>
 	</div>
 	</div>
 

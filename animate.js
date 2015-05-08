@@ -94,8 +94,8 @@ $(document).ready(function() {
                     cap = Object.keys(value.items).length;
 
                     if (cap == 0){
-                         $('#qTable').remove();
-                        $("<div>Too demanding. Nonexistent.</div>").attr('id','ew').appendTo('body'); 
+                         $('#tablediv').remove();
+                        $("<div>Too demanding. Nonexistent.</div>").attr('id','ew').appendTo('.container-fluid');
                     }
 
                     else {
@@ -105,11 +105,13 @@ $(document).ready(function() {
                    
                    
 
-                    $('#qTable').remove();
-                    $("<div></div>").attr('id','address').appendTo('body'); 
-                    $("<div>Start over</div>").attr('id','ew').appendTo('body'); 
-                    $("<div>Next choice</div>").attr('id','ugh').appendTo('body'); 
+                    $('#tablediv').remove();
+                    $("<div></div>").attr('id','address').appendTo('#restaurant'); 
+                    $("<div>Start over</div>").attr('id','ew').appendTo('.container-fluid'); 
+                    $("<div>Next choice</div>").attr('id','ugh').appendTo('.container-fluid'); 
                     again(venueObj);
+                    $('#side').show();
+                    $('#restaurant').show();
 
                     function again(venueObj){
                         console.log(venueObj);
@@ -152,6 +154,7 @@ $(document).ready(function() {
 
 
                         google.maps.event.addDomListener(window, 'load', showMap(venueObj.location.lat, venueObj.location.lng, venueObj.name));
+                        $('#map').show();
                     }
 
 

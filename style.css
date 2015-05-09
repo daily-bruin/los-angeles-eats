@@ -10,36 +10,64 @@ a{
 	text-decoration: none;
 }
 
-#header{
+a:hover{
+	color: #FFB84D;
+}
 
+#header{
+	padding-top: .5%;
+	padding-bottom: .5%;
+	margin-bottom: 2%;
 	background-color: #0d0d0c;
+	text-align:center;
+	border-bottom:5px solid #e7e9ea;
+	box-shadow: 0 2px 2px #888888;
 }
 
 h1{
 	font-family: 'Raleway';
 	font-size: 300%;
 	font-weight: lighter;
-	line-height: 70px;
-	margin-top: 0px;
-	margin-bottom: 20px;
-}
-
-h2{
-	font-size: 190%;
-	font-weight: normal;
-	/*text-shadow: 1px 1px gray;*/
-	line-height: 20px;
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
 
+h2{
+
+	font-size: 200%;
+	font-weight: lighter;
+	/*color: #000066;*/
+	color:white;
+}
+
+/*
+h2{
+	font-size: 190%;
+	font-weight: lighter;
+	color: #000066;
+	text-shadow: -1px -1px #888888;
+	line-height: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+*/
+
+.title{
+	font-size: 150%;
+	color: #0d0d0c;
+	line-height: 150%;
+	font-weight: normal;
+}
 .circle{
 	text-align:center;
 	font-size:20px;
+	font-weight: lighter;
 	line-height:150px;
 	width:150px;
 	height:150px;
 	cursor:pointer;
+	padding: 0;
+	border-radius: .3em;
 }
 
 .center{
@@ -94,7 +122,7 @@ body { overflow-x: hidden;}
 	padding: 0;
 }
 
-ul li, #sidebar {
+ul li {
 	display: inline-block;
 	position: relative;
 	padding: 6px 16px;
@@ -134,6 +162,10 @@ ul li:hover ul {
 	interactive flow diagram
  */
 
+table {
+    table-layout: fixed;
+}
+
 #qTable td {
 	font-family:"Raleway";
 	/*margin-left: 50px;*/
@@ -152,7 +184,8 @@ ul li:hover ul {
 }
 
 #qTable li:hover { 
-	text-decoration:underline
+	font-weight: normal;
+	color: #FFB84D;
 } 
 
 #qTable tr:nth-child(n+2) {
@@ -172,8 +205,10 @@ ul li:hover ul {
 } 
 
 .selectedAnswer {
-	font-weight:bold; 
-	color:#060
+	font-weight:normal;
+	color:#FFB84D;
+	border:.3em solid #e7e9ea;
+	/*box-shadow: 0px 0px 10px #444444;*/
 } 
 
 i {
@@ -181,39 +216,280 @@ i {
 } 
 
 
-#map-canvas {
-	float: right;
-    height: 400px;
-    width: 50%; 
-    margin: 20px;
-    padding: 20px;
+#address {
+	/*height: 30%;
+	width: 30%;*/
+	font-family: Raleway;
+	font-size: 150%;
+	background-color: #e7e9ea;
+	/*display: inline-block;*/
+	float: none;
+	margin: 0 0 10px 0;
+	padding: 5px;
+
 }
 
-#address {
+
+
+
+
+/*#sidebar{
+	width: 200px;
+	background-color:#e7e9ea;
+	font-weight:normal;
+	font-size: 20px;
+	color:black;
+	/*text-align:center;
+}*/
+
+
+		#sidebar
+		{
+			/*width: 60em; /* 1000 */
+			font-family: 'Open Sans', sans-serif;
+			font-weight: 400;
+			position: relative;
+			top: 25%;
+		
+			
+		}
+
+			#sidebar > a
+			{
+				display: none;
+			}
+
+			#sidebar li
+			{
+				position: relative;
+			}
+				#sidebar li a
+				{
+					color: black;
+					display: block;
+				}
+				#sidebar li a:active
+				{
+					background-color: #c00 !important;
+				}
+
+			#sidebar span:after
+			{
+				width: 0;
+				height: 0;
+				border: 0.313em solid transparent; /* 5 */
+				border-bottom: none;
+				border-top-color: #efa585;
+				content: '';
+				vertical-align: middle;
+				display: inline-block;
+				position: relative;
+				right: -0.313em; /* 5 */
+			}
+
+			/* first level */
+
+			#sidebar > ul
+			{
+				height: 3.75em; /* 60 */
+				background-color: white;
+			}
+				#sidebar > ul > li
+				{
+					width: 25%;
+					height: 100%;
+					float: left;
+				}
+					#sidebar > ul > li > a
+					{
+						height: 100%;
+						font-size: 1.5em; /* 24 */
+						line-height: 2.5em; /* 60 (24) */
+						text-align: center;
+					}
+						#sidebar > ul > li:not( :last-child ) > a
+						{
+							border-right: 1px solid black;
+						}
+						#sidebar > ul > li:hover > a,
+						#sidebar > ul:not( :hover ) > li.active > a
+						{
+							background-color: black;
+						}
+
+
+				/* second level */
+
+				#sidebar li ul
+				{
+					background-color: black;
+					display: none;
+					position: absolute;
+					top: 100%;
+				}
+					#sidebar li:hover ul
+					{
+						display: block;
+						left: 0;
+						right: 0;
+					}
+						#sidebar li:not( :first-child ):hover ul
+						{
+							left: -1px;
+						}
+						#sidebar li ul a
+						{
+							font-size: 1.25em; /* 20 */
+							border-top: 1px solid #e15a1f;
+							padding: 0.75em; /* 15 (20) */
+						}
+							#sidebar li ul li a:hover,
+							#sidebar li ul:not( :hover ) li.active a
+							{
+								background-color: #e15a1f;
+							}
+
+
+		@media only screen and ( max-width: 62.5em ) /* 1000 */
+		{
+			#sidebar
+			{
+				width: 100%;
+				position: static;
+				margin: 0;
+			}
+		}
+
+		@media only screen and ( max-width: 40em ) /* 640 */
+		{
+			html
+			{
+				font-size: 75%; /* 12 */
+			}
+
+			#sidebar
+			{
+				position: relative;
+				top: auto;
+				left: auto;
+			}
+				#sidebar > a
+				{
+
+					width: 3.125em; /* 50 */
+					height: 3.125em; /* 50 */
+					text-align: left;
+					text-indent: -9999px;
+					background-color: black;
+					position: relative;
+				}
+					#sidebar > a:before,
+					#sidebar > a:after
+					{
+						position: absolute;
+						border: 2px solid #fff;
+						top: 35%;
+						left: 25%;
+						right: 25%;
+						content: '';
+					}
+					#sidebar > a:after
+					{
+						top: 60%;
+					}
+
+				#sidebar:not( :target ) > a:first-of-type,
+				#sidebar:target > a:last-of-type
+				{
+					display: block;
+				}
+
+
+			/* first level */
+
+			#sidebar > ul
+			{
+				height: auto;
+				display: none;
+				position: absolute;
+				left: 0;
+				right: 0;
+			}
+				#sidebar:target > ul
+				{
+					display: block;
+				}
+				#sidebar > ul > li
+				{
+					width: 100%;
+					float: none;
+				}
+					#sidebar > ul > li > a
+					{
+						height: auto;
+						text-align: left;
+						padding: 0 0.833em; /* 20 (24) */
+					}
+						#sidebar > ul > li:not( :last-child ) > a
+						{
+							border-right: none;
+							border-bottom: 1px solid black;
+						}
+
+
+				/* second level */
+
+				#sidebar li ul
+				{
+					position: static;
+					padding: 1.25em; /* 20 */
+					padding-top: 0;
+				}
+		}
+#restaurant
+{
+	position: relative;
+	top:100px;
+}
+#restaurant li{
+	background-color: ;
+	margin: 5px 0 5px 0;
+	font-size: 20px;
+
+}
+
+#sidebar #buttons{
 	font-family: Raleway;
-	font-size: 120%;
-	/*float: right;*/
-	margin:50px;
-	padding: 20px;
+	font-size: 20px;
+	margin: 20px;
+	padding: 5px;
 	background-color: #e7e9ea;
+	height: 50px;
+	text-align: center;
+	cursor: pointer;
+	/*font-weight: normal;*/
+	color: black;
+	border: black;
 	display: inline-block;
 }
 
-#ew, #ugh {
-	font-family: Raleway;
-	font-size: 70%;
-	float: right;
-	margin:20px;
-	padding: 20px;
-	background-color: #e7e9ea;
-	height: 25px;
-	width: 25pxs;
+#refresh:hover, #next:hover{
+	color: #FFB84D;
+	/*font-weight: normal;*/
 }
 
+#map-canvas {
+    height: 400px;
+	overflow: hidden;
+
+    }
+
 /*
-#sidebar{
-	float: left;
-	margin: 20px;
-	padding: 10px;
-	
+.sideitem{
+	font-weight: lighter;
+	line-height:150px;
+	height: 150px;
+	padding: 0;
+	margin: 0;
+	border-bottom:1px solid #FFB84D;
 }*/

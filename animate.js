@@ -10,6 +10,9 @@
 var near;
 var query;
 var price;
+var label1;
+var label2;
+var label3;
 
 $(document).ready(function() { 
     //checks difference between number of rows and ids. If none, guide is complete and code can be removed.
@@ -62,26 +65,30 @@ $(document).ready(function() {
         if( parent == "near"){
             near = $(this).attr('id');
             console.log(near);
-            var label = $(this).text();
-            label = label.slice(0, -1);
-            $('<div>'+label+'</div>').attr('class','circle').appendTo('#sidebar');
+            label1 = $(this).text();
+            label1 = label1.slice(0, -1);
+            console.log(label1)
+            
         }   //end of if near
 
         if( parent == "query"){
             query = $(this).attr('id');
             console.log(query);
-            var label = $(this).text();
-            label = label.slice(0, -1);
-            $('<div>'+label+'</div>').attr('class','circle').appendTo('#sidebar');
+            label2 = $(this).text();
+            label2 = label2.slice(0, -1);
+            console.log(label2);
         }   //end of if query
 
         if( parent == "price"){
             price = $(this).attr('id');
 
             console.log(price);
-            var label = $(this).text();
-            label = label.slice(0, -1);
-            $('<div>'+label+'</div>').attr('class','circle').appendTo('#sidebar');
+            label3 = $(this).text();
+            label3 = label3.slice(0, -1);
+            console.log(label3);
+
+          
+            
 
             $.getJSON('https://api.foursquare.com/v2/venues/explore?ll='+near+'&query='+query+'&price='+price+'&oauth_token=MEIANHQZROVVGEY4MBKNJMUYHKEPUXR2QL5HLNJP335ZDIJB&v=20150421',
         
@@ -94,8 +101,8 @@ $(document).ready(function() {
                     cap = Object.keys(value.items).length;
 
                     if (cap == 0){
-                         $('#qTable').remove();
-                        $("<div>Too demanding. Nonexistent.</div>").attr('id','ew').appendTo('body'); 
+                         $('#tablediv').remove();
+                        $("<div>Too demanding. Nonexistent.</div>").attr('id','refresh').appendTo('body');
                     }
 
                     else {
@@ -105,11 +112,17 @@ $(document).ready(function() {
                    
                    
 
-                    $('#qTable').remove();
-                    $("<div></div>").attr('id','address').appendTo('body'); 
-                    $("<div>Start over</div>").attr('id','ew').appendTo('body'); 
-                    $("<div>Next choice</div>").attr('id','ugh').appendTo('body'); 
+                    $('#tablediv').remove();
+                    $('#sidebar').show();
+                    $('<li>'+label1+'</li>').appendTo('#sidebar ul');
+                    $('<li>'+label2+'</li>').appendTo('#sidebar ul');
+                    $('<li>'+label3+'</li>').appendTo('#sidebar ul');
+                    $("<div></div>").attr('id','address').appendTo('#restaurant'); 
+                    $("<li>Start over</li>").attr('id','refresh').appendTo('#restaurant'); 
+                    $("<li>Next choice</li>").attr('id','next').appendTo('#restaurant'); 
                     again(venueObj);
+                    
+                    $('#restaurant').show();
 
                     function again(venueObj){
                         console.log(venueObj);
@@ -152,6 +165,7 @@ $(document).ready(function() {
 
 
                         google.maps.event.addDomListener(window, 'load', showMap(venueObj.location.lat, venueObj.location.lng, venueObj.name));
+                        $('#map').show();
                     }
 
 
@@ -171,7 +185,7 @@ $(document).ready(function() {
                             });
                         }   //end of showMap
 
-                        $('#ugh').click( function() {
+                        $('#next').click( function() {
                             random = Math.floor(Math.random() *cap);
                             console.log(random);
                             venueObj = value.items[random].venue;
@@ -182,7 +196,7 @@ $(document).ready(function() {
 
                     })  //end of for each loop for response.groups
 
-                    $('#ew').click( function() {
+                    $('#refresh').click( function() {
                         window.location.reload(true);
                     });
 

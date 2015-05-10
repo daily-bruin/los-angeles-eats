@@ -114,12 +114,12 @@ $(document).ready(function() {
 
                     $('#tablediv').remove();
                     $('#sidebar').show();
-                    $('<div>'+label1+'</div>').appendTo('#sidebar');
-                    $('<div>'+label2+'</div>').appendTo('#sidebar');
-                    $('<div>'+label3+'</div>').appendTo('#sidebar');
+                    $('<li>'+label1+'</li>').appendTo('#sidebar ul');
+                    $('<li>'+label2+'</li>').appendTo('#sidebar ul');
+                    $('<li>'+label3+'</li>').appendTo('#sidebar ul');
                     $("<div></div>").attr('id','address').appendTo('#restaurant'); 
-                    $("<div>Start over</div>").attr('id','refresh').appendTo('#sidebar'); 
-                    $("<div>Next choice</div>").attr('id','next').appendTo('#sidebar'); 
+                    $('#refresh').show();
+                    $('#next').show();
                     again(venueObj);
                     
                     $('#restaurant').show();

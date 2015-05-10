@@ -250,13 +250,14 @@ i {
 	display: none;
 }
 
-#sidebar div, #sidebar p{
+#sidebar ul li, #sidebar div{
 	background-color: black;
 	margin: 5px 0 5px 0;
 	font-size: 20px;
+	display: block;
 }
 
-#sidebar #buttons{
+/*#sidebar #buttons{
 	font-family: Raleway;
 	font-size: 20px;
 	margin: 20px;
@@ -265,11 +266,11 @@ i {
 	height: 50px;
 	text-align: center;
 	cursor: pointer;
-	/*font-weight: normal;*/
+	/*font-weight: normal;
 	color: black;
 	border: black;
 	display: inline-block;
-}
+}*/
 
 #refresh:hover, #next:hover{
 	color: #FFB84D;
@@ -291,3 +292,62 @@ i {
 	margin: 0;
 	border-bottom:1px solid #FFB84D;
 }*/
+
+@media screen and (max-width: 700px) {
+	
+	#sidebar {
+		z-index: 1;
+		position: relative;
+		min-height: 40px;
+	}	
+	
+	#sidebar ul{
+		/*width: 180px;*/
+		padding: 5px 0;
+		position: absolute;
+		margin-bottom: 5px;
+		/*border: solid 1px #aaa;
+		border-radius: 5px;
+		box-shadow: 0 1px 2px rgba(0,0,0,.3);*/
+	}
+	
+	#sidebar ul li{
+		display: none; /* hide all <li> items */
+		margin: 0;
+	}
+	#sidebar #current, #sidebar div{
+		display: block; /* show only current <li> item */
+	}
+	
+	#sidebar a{
+		display: block;
+		padding: 5px 5px 5px 32px;
+		text-align: left;
+	}
+	
+	#sidebar #current a {
+		background: none;
+		color: #666;
+	}
+
+	/* on nav hover */
+	#sidebar ul:hover {
+		background-image: none;
+	}
+	#sidebar ul:hover li {
+		display: block;
+		margin: 0 0 5px;
+	}
+	/* right nav */
+	#sidebar.right ul {
+		left: auto;
+		right: 0;
+	}
+
+	/* center nav */
+	#sidebar .center ul {
+		left: 50%;
+		margin-left: -90px;
+	}
+	
+}

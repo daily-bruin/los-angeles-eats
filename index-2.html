@@ -35,45 +35,54 @@
 		<div id="sidebar" align="center"> </div>
 	</div>
 	-->
-	<div id="tablediv" style="float: none; margin: 0 auto;">
-	<table id="qTable">
-	  <tr>
-	    <td><h4 align=center class=title>Where?</h4>
-	      <ul id="near" align="center">
-	        <li id="34.0561,-118.4297">Westwood <i>2</i></li>
-	        <li id="34.0306,-118.4634">Sawtelle <i>2</i></li>
-	        <li id="34.0219, -118.4814">Santa Monica <i>2</i></li>
-	    </ul>
-	  </tr>
-
-	  <tr>
-	    <td><h4 align=center class=title>What do you want to eat?</h4>
-	      <ul id="query">
-	        <li id="italian+food">Italian<i>3</i></li>
-	        <li id="mexican+food">Mexican<i>3</i></li>
-	        <li id="japanese+food">Japanese<i>3</i></li>
-	        <li id="korean+food">Korean<i>3</i></li>
-	        <li id="chinese+food">Chinese<i>3</i></li>
-	        <li id="indian+food">Indian<i>3</i></li>
-	        <li id="american+food">American<i>3</i></li>
-	        <li id="food">Random<i>3</i></li>
-	    </ul></td>
-	  </tr>
-	  <tr>
-	    <td><h4 align=center class=title>Which price range?</h4>
-	      <ul id="price">
-	        <li id="1">$<i>4</i></li>
-	        <li id="2">$$<i>4</i></li>
-	        <li id="3">$$$<i>4</i></li>
-	        <li id="4">$$$$<i>4</i></li>
-	    </ul></td>
-	  </tr>
-	</table>
-	</div>
 <div class="container-fluid">
 	<div class="row">
+
+		<div class="col-lg-2"></div> <!-- empty placeholder, so that center col below can be span-8 -->
+
+		<div id="tablediv" class="col-lg-8" style="float: none; margin: 0 auto;">
+		<table id="qTable">
+	  	<tr>
+	    	<td><h4 align=center class=title>Where?</h4>
+	      	<ul id="near" align="center" style="padding: 0">
+	        	<li id="34.0561,-118.4297">Westwood <i>2</i></li>
+	        	<li id="34.0306,-118.4634">Sawtelle <i>2</i></li>
+	        	<li id="34.0219, -118.4814">Santa Monica <i>2</i></li>
+	    	</ul>
+	  	</tr>
+
+	  	<tr>
+	    	<td><h4 align=center class=title>What do you want to eat?</h4>
+	      	<ul id="query" align="center" style="padding: 0">
+	        	<li id="italian+food">Italian<i>3</i></li>
+	        	<li id="mexican+food">Mexican<i>3</i></li>
+	        	<li id="japanese+food">Japanese<i>3</i></li>
+	        	<li id="korean+food">Korean<i>3</i></li>
+	        	<li id="chinese+food">Chinese<i>3</i></li>
+	        	<li id="indian+food">Indian<i>3</i></li>
+	        	<li id="american+food">American<i>3</i></li>
+	        	<li id="food">Random<i>3</i></li>
+	    	</ul></td>
+	  	</tr>
+	  	<tr>
+	    	<td><h4 align=center class=title>Which price range?</h4>
+	      	<ul id="price" align="center" style="padding: 0">
+	        	<li id="1">$<i>4</i></li>
+	        	<li id="2">$$<i>4</i></li>
+	        	<li id="3">$$$<i>4</i></li>
+	        	<li id="4">$$$$<i>4</i></li>
+	    	</ul></td>
+	  	</tr>
+		</table>
+		</div>
+
+		<div class="col-lg-2"></div> <!--empty placeholder -->
+
+	</div>
+
+	<div class="row">
 	
-	<div  id="sidebar" class="col-md-4">
+	<div  id="sidebar" class="col-lg-4">
 		<div id="buttons">
 			<div id="refresh" style="display:none">Start over</div>
 			<div id="next" style="display:none">Next</div>
@@ -84,9 +93,9 @@
 		</ul>		
 	</div>
 
-	<div id="restaurant" class="col-md-4"></div>
+	<div id="restaurant" class="col-lg-4"></div>
 
-	<div id="map" class="col-md-4">
+	<div id="map" class="col-lg-4">
 		<div id="map-canvas"></div>
 	</div>
 	</div>

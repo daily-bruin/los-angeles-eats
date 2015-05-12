@@ -101,8 +101,12 @@ $(document).ready(function() {
                     cap = Object.keys(value.items).length;
 
                     if (cap == 0){
-                         $('#tablediv').remove();
-                        $("<div>Too demanding. Nonexistent.</div>").attr('id','refresh').appendTo('body');
+                        $('#tablediv').remove();
+                        $("<div>Too demanding. Nonexistent.</div>").attr('id','refresh2').appendTo('#restuarant');
+                        
+                        $('#refresh2').click( function() {
+                            window.location.reload(true);
+                        });
                     }
 
                     else {

@@ -117,9 +117,9 @@ $(document).ready(function() {
                     $('<li>'+label1+'</li>').appendTo('#sidebar ul');
                     $('<li>'+label2+'</li>').appendTo('#sidebar ul');
                     $('<li>'+label3+'</li>').appendTo('#sidebar ul');
-                    $("<div></div>").attr('id','address').appendTo('#restaurant'); 
-                    $('#refresh').show();
-                    $('#next').show();
+                    $("<div></div>").attr('id','address').appendTo('#restaurant');
+                    $('#refresh').css( "display", "inline-block");
+                    $('#next').css( "display", "inline-block");
                     again(venueObj);
                     
                     $('#restaurant').show();

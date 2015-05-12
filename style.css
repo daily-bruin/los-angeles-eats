@@ -20,7 +20,7 @@ a:hover{
 	margin-bottom: 2%;
 	background-color: #0d0d0c;
 	text-align:center;
-	border-bottom:5px solid #e7e9ea;
+	border-bottom:5px solid #EBEDEE;
 	box-shadow: 0 2px 2px #888888;
 }
 
@@ -62,9 +62,9 @@ h2{
 	text-align:center;
 	font-size:20px;
 	font-weight: lighter;
-	line-height:150px;
-	width:150px;
-	height:150px;
+	line-height:138px;
+	width:138px;
+	height:138px;
 	cursor:pointer;
 	padding: 0;
 	border-radius: .3em;
@@ -205,9 +205,11 @@ table {
 } 
 
 .selectedAnswer {
+	width: 150px;
+	height: 150px;
 	font-weight:normal;
 	color:#FFB84D;
-	border:.3em solid #e7e9ea;
+	border:.3em solid #EBEDEE;
 	/*box-shadow: 0px 0px 10px #444444;*/
 } 
 
@@ -221,7 +223,7 @@ i {
 	width: 30%;*/
 	font-family: Raleway;
 	font-size: 150%;
-	background-color: #e7e9ea;
+	background-color: #EBEDEE;
 	/*display: inline-block;*/
 	float: none;
 	margin: 0 0 10px 0;
@@ -243,7 +245,6 @@ i {
 }*/
 
 #sidebar{
-	color: white;
 	text-align:center;
 	line-height: 50px;
 	font-weight: lighter;
@@ -251,10 +252,10 @@ i {
 }
 
 #sidebar ul li, #sidebar div{
-	background-color: black;
 	margin: 5px 0 5px 0;
 	font-size: 20px;
 	display: block;
+	cursor: default;
 }
 
 /*#sidebar #buttons{
@@ -272,9 +273,33 @@ i {
 	display: inline-block;
 }*/
 
+#buttons{
+	text-align:justify; /*to evenly space out the buttons using invisible div*/
+}
+
+#refresh, #next{
+	background-color: black;
+	width: 48%;
+	height: 100%;
+	color: white;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
 #refresh:hover, #next:hover{
+	font-weight: normal;
 	color: #FFB84D;
+	cursor: pointer;
 	/*font-weight: normal;*/
+}
+
+#sidebar #current{
+	font-weight: normal;
+	color: #FFB84D;
+	margin-bottom: 5px;
+	display: block; /* show only current <li> item */
+	cursor: pointer;
 }
 
 #map-canvas {
@@ -305,7 +330,6 @@ i {
 		/*width: 180px;*/
 		padding: 5px 0;
 		position: relative;
-		margin-bottom: 5px;
 		/*border: solid 1px #aaa;
 		border-radius: 5px;
 		box-shadow: 0 1px 2px rgba(0,0,0,.3);*/
@@ -313,12 +337,12 @@ i {
 
 	
 	#sidebar ul li{
+		background-color: black;
+		cursor: default;
 		display: none; /* hide all <li> items */
 		margin: 0;
 	}
-	#sidebar #current{
-		display: block; /* show only current <li> item */
-	}
+
 	
 	#sidebar a{
 		display: block;
@@ -335,10 +359,12 @@ i {
 	#sidebar ul:hover {
 		background-image: none;
 	}
+
 	#sidebar ul:hover li {
 		display: block;
 		margin: 0 0 5px;
 	}
+
 	/* right nav */
 	#sidebar.right ul {
 		left: auto;

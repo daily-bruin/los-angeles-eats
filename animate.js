@@ -173,21 +173,21 @@ $(document).ready(function() {
                     }
 
 
-                        function showMap(latitude,longitude) {
-                            var myLatlng = new google.maps.LatLng(latitude,longitude);
-                            var mapOptions = {
-                                zoom: 15,
-                                center: myLatlng
-                            };
+                        // function showMap(latitude,longitude) {
+                        //     var myLatlng = new google.maps.LatLng(latitude,longitude);
+                        //     var mapOptions = {
+                        //         zoom: 15,
+                        //         center: myLatlng
+                        //     };
 
-                            map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+                        //     map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
-                            var marker = new google.maps.Marker({
-                                position: myLatlng,
-                                map: map,
-                                title: 'Marker'
-                            });
-                        }   //end of showMap
+                        //     var marker = new google.maps.Marker({
+                        //         position: myLatlng,
+                        //         map: map,
+                        //         title: 'Marker'
+                        //     });
+                        // }   //end of showMap
 
                         $('#next').click( function() {
                             random = Math.floor(Math.random() *cap);
@@ -213,7 +213,7 @@ $(document).ready(function() {
         function showMap(latitude, longitude, name) {
             var myLatlng = new google.maps.LatLng(latitude,longitude);
             var mapOptions = {
-                zoom: 12,
+                zoom: 15,
                 center: myLatlng
              };
             map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
@@ -228,4 +228,4 @@ $(document).ready(function() {
     }); // end of super long function
 
 
-});
+}); //load document

@@ -225,7 +225,10 @@ i {
 	float: none;
 	margin: 0 0 10px 0;
 	padding: 5px;
+}
 
+#address a{
+	color: #FFB84D;
 }
 
 

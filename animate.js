@@ -99,10 +99,11 @@ $(document).ready(function() {
 
                 $.each(data.response.groups, function(key,value){
                     cap = Object.keys(value.items).length;
-
+                    console.log(cap);
                     if (cap == 0){
                         $('#tablediv').remove();
-                        $("<div>Too demanding. Nonexistent.</div>").attr('id','refresh2').appendTo('#restuarant');
+                        $("<div>Too demanding. Nonexistent.</div>").attr('id','refresh2').appendTo('#restaurant');
+                        $("<img src='http://i.imgur.com/6NvNV.gif'></img>").appendTo('#pusheen');
                         
                         $('#refresh2').click( function() {
                             window.location.reload(true);
@@ -209,7 +210,7 @@ $(document).ready(function() {
             } //end of if price
 
         var map;
-       
+        
         function showMap(latitude, longitude, name) {
             var myLatlng = new google.maps.LatLng(latitude,longitude);
             var mapOptions = {
@@ -224,6 +225,7 @@ $(document).ready(function() {
                   title: name,
             });
         }   //end of showMap function
+
 
     }); // end of super long function
 

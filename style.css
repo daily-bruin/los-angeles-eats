@@ -377,12 +377,14 @@ i {
 #refresh2{
 	background-color: black;
 	height: 100%;
+	width: 450px;
 	color: white;
 	margin: 0 auto;
 	padding: 5px;
 	text-align: center;
 	font-size: 20px;
 	font-weight: lighter;
+	text-align: center;
 }
 
 #refresh2:hover{
@@ -391,3 +393,10 @@ i {
 	cursor: pointer;
 	/*font-weight: normal;*/
 }
+
+#pusheen{
+    margin: auto;
+    width: 450px;
+    height: 450px;
+}
+

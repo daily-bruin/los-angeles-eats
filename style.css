@@ -395,6 +395,7 @@ i {
 }
 
 #pusheen{
+	display: block;
     margin: auto;
     width: 450px;
     height: 450px;

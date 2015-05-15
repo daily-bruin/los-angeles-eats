@@ -100,9 +100,12 @@ $(document).ready(function() {
                 $.each(data.response.groups, function(key,value){
                     cap = Object.keys(value.items).length;
                     console.log(cap);
+                    $("#pusheen").hide();
                     if (cap == 0){
                         $('#tablediv').remove();
-                        $("<div>Too demanding. Nonexistent.</div>").attr('id','refresh2').appendTo('#restaurant');
+                        $("#map-canvas").hide();
+                        $("<div>Too demanding. Nonexistent.</div>").attr('id','refresh2').appendTo('#error');
+                        $("#pusheen").show();
                         $("<img src='http://i.imgur.com/6NvNV.gif'></img>").appendTo('#pusheen');
                         
                         $('#refresh2').click( function() {

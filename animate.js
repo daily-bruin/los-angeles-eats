@@ -15,6 +15,10 @@ var label2;
 var label3;
 
 $(document).ready(function() { 
+
+    // $("#map-canvas").hide();
+    $("#row2").hide();
+
     //checks difference between number of rows and ids. If none, guide is complete and code can be removed.
     //if a result is used in more that one question reduce the value or results by the number of reuses
     var rows = $('#qTable tr').length - 1; 
@@ -76,7 +80,7 @@ $(document).ready(function() {
             console.log(query);
             label2 = $(this).text();
             label2 = label2.slice(0, -1);
-            console.log(label2);
+            console.log("query: "+label2);
         }   //end of if query
 
         if( parent == "price"){
@@ -85,7 +89,7 @@ $(document).ready(function() {
             console.log(price);
             label3 = $(this).text();
             label3 = label3.slice(0, -1);
-            console.log(label3);
+            // console.log(label3);
 
           
             
@@ -98,6 +102,8 @@ $(document).ready(function() {
                     var venueObj;
 
                 $.each(data.response.groups, function(key,value){
+                    $("#row2").show();
+
                     cap = Object.keys(value.items).length;
                     console.log(cap);
                     $("#pusheen").hide();
@@ -131,6 +137,7 @@ $(document).ready(function() {
                     again(venueObj);
                     
                     $('#restaurant').show();
+
 
                     function again(venueObj){
                         console.log(venueObj);

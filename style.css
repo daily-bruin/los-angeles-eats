@@ -2,11 +2,10 @@
 body{
 	font-family: Raleway;
 	background-color: white;
-	background-image: url("losAngeles.jpg");
+	background: url("LA.png");
 	margin: 0;
 	padding: 0;
 }
-
 
 a{
 	color: white;
